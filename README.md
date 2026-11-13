@@ -27,17 +27,17 @@ Detection Monitor is a UK-focused transaction monitoring, AML analytics and inve
 
 > **Read this first.** Detection Monitor is a portfolio-grade **MVP**. All bundled data is synthetic. It is **not** production-certified, **not** approved or authorised by the FCA, and **not** affiliated with any UK government body. See [Demo Mode](#demo-mode) and [RISK.md](RISK.md).
 
-### Dashboard Preview
-
-![Detection Monitor AML Command Center](docs/images/dashboard-overview.png)
-
-*The AML Command Center in demo mode: KPI cards, UK Risk Map (alerts scoring 60 and above), alerts by risk level, alerts over time, top risk locations, recent alerts, transaction monitoring and the rule-based risk panel. Every figure in this screenshot is **simulated** (the banner reads "Demo data — simulated, stored in memory only").*
-
 ### Authentication Interface
 
 ![Detection Monitor Sign In](docs/images/login-screen.png)
 
 *The sign-in page, with the option to explore with simulated demo data and no backend.*
+
+### Dashboard Preview
+
+![Detection Monitor AML Command Center](docs/images/dashboard-overview.png)
+
+*The AML Command Center in demo mode: KPI cards, UK Risk Map (alerts scoring 60 and above), alerts by risk level, alerts over time, top risk locations, recent alerts, transaction monitoring and the rule-based risk panel. Every figure in this screenshot is **simulated** (the banner reads "Demo data — simulated, stored in memory only").*
 
 ## Table of contents
 
