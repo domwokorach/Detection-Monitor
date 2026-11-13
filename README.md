@@ -8,6 +8,16 @@
 
 Event-time rule screening, analyst case management and a tamper-evident audit trail in one workspace.
 
+<p align="center">
+  <a href="https://detection-monitor.vercel.app/"><b>Live application</b></a> ·
+  <a href="https://github.com/domwokorach/Detection-Monitor/releases">Releases</a> ·
+  <a href="#github-packages">GitHub Packages</a> ·
+  <a href="SECURITY.md">Security Policy</a> ·
+  <a href="#documentation-index">Documentation</a>
+</p>
+
+<p align="center"><sub>The live application runs on <b>synthetic demonstration data</b> only. No real customer or transaction data is used.</sub></p>
+
 </div>
 
 <br />
