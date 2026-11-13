@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { motion } from 'motion-v'
-import { ShieldCheck, Activity, Fingerprint, Sparkles } from 'lucide-vue-next'
+import { Sparkles } from 'lucide-vue-next'
 import { enterDemo, login } from '@/stores/app'
 import { ApiError } from '@/services/http'
 import { inputCls } from '@/lib/ui'
+import AuthHeroPanel from '@/components/auth/AuthHeroPanel.vue'
 import Btn from '@/components/ui/Btn.vue'
 import Field from '@/components/ui/Field.vue'
 
@@ -25,17 +26,10 @@ async function submit() {
 </script>
 
 <template>
-  <main class="grid min-h-screen place-items-center px-4 py-10">
-    <div class="grid w-full max-w-5xl overflow-hidden rounded-3xl lg:grid-cols-2 glass">
-      <motion.section :initial="{ opacity: 0, x: -20 }" :animate="{ opacity: 1, x: 0 }" :transition="{ duration: 0.4 }" class="relative hidden flex-col justify-between overflow-hidden p-10 lg:flex">
-        <div class="pointer-events-none absolute -top-20 -left-20 size-72 rounded-full bg-violet-500/30 blur-3xl" /><div class="pointer-events-none absolute -right-16 -bottom-24 size-72 rounded-full bg-cyan-400/20 blur-3xl" />
-        <div class="relative flex items-center gap-3"><div class="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-violet-400 to-cyan-300"><ShieldCheck :size="20" class="text-ink-900" aria-hidden="true" /></div><span class="text-xl font-semibold text-white">Detection-monitor</span></div>
-        <div class="relative"><h1 class="text-4xl leading-tight font-semibold tracking-tight text-white">Catch detection<br>before it settles.</h1>
-          <p class="mt-4 max-w-sm text-slate-300">Event-time rule screening, analyst case management and a tamper-evident audit trail in one workspace.</p>
-          <div class="mt-6 flex flex-wrap gap-3 text-xs text-slate-300"><span class="flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5"><Activity :size="13" aria-hidden="true" /> Live screening</span><span class="flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5"><Fingerprint :size="13" aria-hidden="true" /> Audit-ready</span></div></div>
-      </motion.section>
+  <main class="grid min-h-screen grid-cols-1 lg:grid-cols-[55fr_45fr] [&>*]:min-w-0">
+    <AuthHeroPanel />
 
-      <motion.section :initial="{ opacity: 0, y: 16 }" :animate="{ opacity: 1, y: 0 }" :transition="{ duration: 0.35, delay: 0.08 }" class="bg-ink-800/60 p-8 sm:p-10">
+      <motion.section :initial="{ opacity: 0, y: 16 }" :animate="{ opacity: 1, y: 0 }" :transition="{ duration: 0.35, delay: 0.08 }" class="mx-auto flex w-full max-w-md flex-col justify-center p-6 sm:p-10 lg:p-12">
         <h2 class="text-xl font-semibold text-white">Sign in</h2>
         <p class="mt-1 text-sm text-slate-400">Use your analyst or administrator account.</p>
         <form class="mt-6 space-y-4" @submit.prevent="submit">
@@ -48,6 +42,5 @@ async function submit() {
         <Btn class="w-full" @click="enterDemo()"><Sparkles :size="15" /> Explore with demo data</Btn>
         <p class="mt-2 text-center text-xs" :class="unreachable ? 'text-amber-300' : 'text-slate-500'">{{ unreachable ? 'The backend looks offline — you can still explore with simulated data.' : 'No backend needed. Data is simulated and clearly labelled.' }}</p>
       </motion.section>
-    </div>
   </main>
 </template>
