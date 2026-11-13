@@ -30,7 +30,7 @@ async function submit() {
       <motion.section :initial="{ opacity: 0, x: -20 }" :animate="{ opacity: 1, x: 0 }" :transition="{ duration: 0.4 }" class="relative hidden flex-col justify-between overflow-hidden p-10 lg:flex">
         <div class="pointer-events-none absolute -top-20 -left-20 size-72 rounded-full bg-violet-500/30 blur-3xl" /><div class="pointer-events-none absolute -right-16 -bottom-24 size-72 rounded-full bg-cyan-400/20 blur-3xl" />
         <div class="relative flex items-center gap-3"><div class="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-violet-400 to-cyan-300"><ShieldCheck :size="20" class="text-ink-900" aria-hidden="true" /></div><span class="text-xl font-semibold text-white">Detection-monitor</span></div>
-        <div class="relative"><h1 class="text-4xl leading-tight font-semibold tracking-tight text-white">Catch fraud<br>before it settles.</h1>
+        <div class="relative"><h1 class="text-4xl leading-tight font-semibold tracking-tight text-white">Catch detection<br>before it settles.</h1>
           <p class="mt-4 max-w-sm text-slate-300">Event-time rule screening, analyst case management and a tamper-evident audit trail in one workspace.</p>
           <div class="mt-6 flex flex-wrap gap-3 text-xs text-slate-300"><span class="flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5"><Activity :size="13" aria-hidden="true" /> Live screening</span><span class="flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5"><Fingerprint :size="13" aria-hidden="true" /> Audit-ready</span></div></div>
       </motion.section>

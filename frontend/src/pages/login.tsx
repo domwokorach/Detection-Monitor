@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { Activity, Fingerprint, ShieldCheck, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
+import { AuthHeroPanel } from '@/components/auth/AuthHeroPanel'
 import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
 import { Spinner } from '@/components/ui/spinner'
@@ -20,14 +20,9 @@ export default function Login() {
     try { await login(email, password) } catch (err) { setError(err instanceof Error ? err.message : 'Sign in failed'); setOffline(err instanceof ApiError && err.status === 0) } finally { setBusy(false) }
   }
   return (
-    <main className="grid min-h-svh place-items-center p-4">
-      <Card className="dash-card grid w-full max-w-4xl gap-0 overflow-hidden p-0 lg:grid-cols-2">
-        <motion.section initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.35 }} className="hidden flex-col justify-between bg-sidebar p-8 lg:flex">
-          <div className="flex items-center gap-2.5"><div className="grid size-9 place-items-center rounded-lg bg-primary text-primary-foreground"><ShieldCheck className="size-5" aria-hidden="true" /></div><span className="text-base font-semibold">Detection-monitor</span></div>
-          <div><h1 className="text-3xl leading-tight font-semibold tracking-tight">Catch fraud<br />before it settles.</h1><p className="mt-3 max-w-xs text-sm text-muted-foreground">Event-time rule screening, analyst case management and a tamper-evident audit trail for UK banking.</p>
-            <div className="mt-5 flex gap-2 text-[11px] text-muted-foreground"><span className="flex items-center gap-1.5 rounded-full border px-2.5 py-1"><Activity className="size-3" aria-hidden="true" />Live screening</span><span className="flex items-center gap-1.5 rounded-full border px-2.5 py-1"><Fingerprint className="size-3" aria-hidden="true" />Audit-ready</span></div></div>
-        </motion.section>
-        <motion.section initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.05 }} className="p-8">
+    <main className="grid min-h-svh grid-cols-1 lg:grid-cols-[55fr_45fr] [&>*]:min-w-0">
+      <AuthHeroPanel />
+        <motion.section initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.05 }} className="mx-auto flex w-full max-w-md flex-col justify-center p-6 sm:p-10 lg:p-12">
           <h2 className="text-lg font-semibold">Sign in</h2><p className="mt-1 text-xs text-muted-foreground">Use your analyst or administrator account.</p>
           <form onSubmit={submit} className="mt-5">
             <FieldGroup className="gap-3">
@@ -40,7 +35,6 @@ export default function Login() {
           <Button variant="outline" className="w-full" onClick={() => enterDemo()}><Sparkles data-icon="inline-start" />Explore with demo data</Button>
           <FieldDescription className={`mt-2 text-center ${offline ? 'text-sev-med' : ''}`}>{offline ? 'The backend looks offline. You can still explore with simulated data.' : 'No backend needed. Demo data is simulated and clearly labelled.'}</FieldDescription>
         </motion.section>
-      </Card>
     </main>
   )
 }
