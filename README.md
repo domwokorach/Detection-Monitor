@@ -1,51 +1,160 @@
-# Sentinel — Fraud Detection & Transaction Monitoring
+<div align="center">
 
-A runnable, portfolio-ready banking transaction-monitoring **MVP**. It ingests synthetic transactions, screens them with configurable rules, creates risk alerts, supports analyst case review, and maintains a hash-linked audit trail.
+<img src="frontend/public/favicon.svg" alt="" width="56" height="56" />
 
-> **Scope:** This is a demonstration system using fictional accounts and synthetic transactions. Detection policies are illustrative, not a substitute for an institution's fraud controls, sanctions screening, AML program, or statutory suspicious-activity reporting.
+# **Detection Monitor**
 
-## Quick start
+## Catch detection<br>before it settles.
 
-Requires **Docker Engine** and **Docker Compose v2**.
+Event-time rule screening, analyst case management and a tamper-evident audit trail in one workspace.
 
-```bash
-cp .env.example .env
-# For anything beyond a private local demo, replace all example passwords/secrets in .env.
-docker compose up --build
-```
+</div>
 
-Open:
+<br />
 
-- **React analyst dashboard:** http://localhost:8080
-- **FastAPI interactive API docs:** http://localhost:8000/docs
-- **API health check:** http://localhost:8000/api/health
+[![Status: portfolio MVP](https://img.shields.io/badge/status-portfolio%20MVP-65B9EE)](RISK.md)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)](backend/Dockerfile)
+[![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi&logoColor=white)](backend/requirements.txt)
+[![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](frontend/package.json)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](frontend/package.json)
+[![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)](frontend/vite.config.ts)
+[![PostgreSQL 16](https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql&logoColor=white)](compose.yaml)
+[![Redis 7](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)](compose.yaml)
+[![Docker Compose](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)](compose.yaml)
+[![Licence: not yet chosen](https://img.shields.io/badge/licence-not%20yet%20chosen-lightgrey)](LICENSE.md)
 
-Demo sign-in:
+Detection Monitor is a UK-focused transaction monitoring, AML analytics and investigation platform. It ingests payment events, screens them against configurable rules, raises risk-scored alerts, supports analyst case review, maps alert concentration across UK counties, and records every material action in a hash-linked audit trail.
 
-| Role | Email | Default password |
-|---|---|---|
-| Administrator | `admin@demo.local` | `ChangeMe123!` |
-| Analyst | `analyst@demo.local` | `ChangeMe123!` |
+> **Read this first.** Detection Monitor is a portfolio-grade **MVP**. All bundled data is synthetic. It is **not** production-certified, **not** approved or authorised by the FCA, and **not** affiliated with any UK government body. See [Demo Mode](#demo-mode) and [RISK.md](RISK.md).
 
-The default credentials are **development-only** and should never be used with real data or on a public deployment. The dashboard includes them only as a local demo convenience. You can change them in `.env` *before the initial seed*. The existing user hash is not automatically changed if the database has already been seeded.
+### Dashboard Preview
 
-PostgreSQL is persisted to a named Docker volume. Redis messages are intentionally ephemeral because the PostgreSQL outbox is the durable source of work.
+![Detection Monitor AML Command Center](docs/images/dashboard-overview.png)
 
-## What it demonstrates
+*The AML Command Center in demo mode: KPI cards, UK Risk Map (alerts scoring 60 and above), alerts by risk level, alerts over time, top risk locations, recent alerts, transaction monitoring and the rule-based risk panel. Every figure in this screenshot is **simulated** (the banner reads "Demo data — simulated, stored in memory only").*
 
-| Feature | Implementation |
+### Authentication Interface
+
+![Detection Monitor Sign In](docs/images/login-screen.png)
+
+*The sign-in page, with the option to explore with simulated demo data and no backend.*
+
+## Table of contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Application Screenshots](#application-screenshots)
+- [Technology Stack](#technology-stack)
+- [System Architecture](#system-architecture)
+- [Getting Started](#getting-started)
+- [Environment Configuration](#environment-configuration)
+- [Running with Docker](#running-with-docker)
+- [API Documentation](#api-documentation)
+- [Detection Rules](#detection-rules)
+- [Transaction Monitoring](#transaction-monitoring)
+- [UK Risk Map](#uk-risk-map)
+- [Alerts and Investigations](#alerts-and-investigations)
+- [Audit History](#audit-history)
+- [Demo Mode](#demo-mode)
+- [Testing](#testing)
+- [Security](#security)
+- [Documentation Index](#documentation-index)
+- [Licence and Copyright](#licence-and-copyright)
+
+## Overview
+
+| Area | What Detection Monitor does |
 |---|---|
-| Event ingestion | Authenticated `POST /api/transactions`; Decimal monetary amounts; external-ID idempotency with payload conflict detection |
-| Asynchronous processing | Outbox table committed atomically with transactions; parallel-safe `SELECT ... FOR UPDATE SKIP LOCKED` worker, retry budget and Redis wakeups |
-| Configurable rules | Amount threshold, country watchlist, velocity count, cumulative outflow; schema validation, enable/disable, version conflict checks |
-| Risk analytics | Scoring capped at 100, flagged rate, daily counts, pending job counts, alert severity |
-| Analyst review | Claim a case, set In Review/Escalated/Closed, require evidence and disposition on closure, enforce assignee restrictions |
-| Auditability | User and system actions in a SHA-256-linked append-only application log; verification endpoint; matched rule version/config/score snapshots |
-| UI | Responsive React/TypeScript dashboard with overview, investigation queue, transaction simulator, policy editor, audit browser |
-| Security | Argon2 password hashes, signed expiring JWTs, role-based API authorization, server-side case transition rules |
-| Testing | 8 automated pytest tests exercising API, rule engine, worker, review, idempotency, role restrictions, and tamper detection |
+| Ingestion | Authenticated, idempotent `POST /api/transactions`. Decimal money, external-ID de-duplication, payload-conflict detection. |
+| Screening | An asynchronous worker evaluates enabled rules against each transaction, sums rule weights (capped at 100) and raises an alert at or above a threshold. |
+| Investigation | Analysts claim, review, escalate and close alerts. Closure requires a disposition and a written note. |
+| Geography | The UK Risk Map plots only alerts with `risk_score >= 60`, located by the account's recorded UK local authority. |
+| Assurance | An append-only, SHA-256-linked audit log records user and system actions and can be verified by an administrator. |
 
-### Architecture
+The repository contains three front-end/data components:
+
+| Path | Purpose |
+|---|---|
+| `backend/` | FastAPI service, rule engine, worker, audit chain, tests |
+| `frontend/` | Primary React + TypeScript analyst UI (served by Docker Compose) |
+| `frontend-vue/` | Vue 3 port of the UI, with an AML Command Center layout. **Not** part of Docker Compose. The dashboard screenshot above was captured from this variant |
+| `uk-population-map/`, `uk-cities-inequality/` | Supporting data-visualisation experiments and their ONS source data |
+
+## Features
+
+Status key: **Implemented** = present in the code in this repository. **Demo-only** = works against simulated in-browser data. **Planned** = not implemented.
+
+| Capability | Status | Notes |
+|---|---|---|
+| Real-time transaction monitoring | Implemented | Outbox-driven worker with Redis wake-ups; UI auto-refreshes; live-feed streams exist for the investigations register and watchlist hits. "Real-time" means near-real-time on synthetic or sandbox data, not a connection to live payment rails |
+| Configurable fraud risk rules | Implemented | Four rule kinds, validated config, weights, enable/disable, optimistic version checks |
+| Risk scoring and suspicious alerts | Implemented | Score = sum of matched rule weights, capped at 100 |
+| Analyst investigation workflows | Implemented | Investigation workspace with IP/geo context, risk factors, linked alerts, evidence attestation and timeline |
+| Case management | Implemented | `OPEN → IN_REVIEW → ESCALATED → CLOSED` with server-side transition rules |
+| Watchlist monitoring | Implemented (configured country codes) | Matches a **configurable list of country codes**. It is **not** a maintained sanctions, PEP or adverse-media dataset |
+| UK geographic risk analysis | Implemented | County-level map and Top Risk Locations; accounts need a UK local-authority (GSS) code |
+| Animated dashboard KPIs | Implemented | Count-up KPI cards and sparklines |
+| Interactive charts | Implemented | Donut, time-series, step chart, map |
+| CSV investigation exports | Implemented | Filtered/page/selected/all scopes, formula-injection neutralisation, audited, large exports run as background jobs |
+| Tamper-evident audit history | Implemented | SHA-256 hash chain with admin verification endpoint (see limits in [SECURITY.md](SECURITY.md)) |
+| Role-based access controls | Implemented | Two roles, `admin` and `analyst`, enforced server-side |
+| TrueLayer open-banking import | Sandbox only | Admin-triggered import from the TrueLayer **sandbox**. No production banking connection |
+| Merchant logos (Logo.dev) | Optional | Shown only for analyst-verified counterparty → domain bindings |
+| "Analyst assistant" / AI Risk Intelligence panel | Implemented as deterministic text | Restates stored rule evidence. It is **not** a language model and does not produce independent risk assessments |
+| SSO / MFA, rate limiting, JWT rotation | Planned | See the hardening backlog in [RISK.md](RISK.md) |
+| Sanctions/PEP data feeds, SAR/STR workflow | Planned | Not implemented |
+| Customers, Reports, Settings pages (Vue variant) | Placeholder | Render a placeholder screen in `frontend-vue/` |
+
+## Application Screenshots
+
+| Screenshot | File |
+|---|---|
+| AML Command Center dashboard (simulated demo data) | [`docs/images/dashboard-overview.png`](docs/images/dashboard-overview.png) |
+| Detection Monitor sign-in page | [`docs/images/login-screen.png`](docs/images/login-screen.png) |
+
+Both images are real captures of the running application and are reproduced unmodified. The dashboard figures (24 alerts, 160 monitored transactions, average risk score 66, and so on) come from the in-memory demo feed and carry no real-world meaning. See [COPYRIGHT.md](COPYRIGHT.md) for screenshot provenance.
+
+## Technology Stack
+
+**Frontend (`frontend/`)**
+
+| Technology | Use |
+|---|---|
+| React 19, TypeScript 5.7, Vite 6 | Application shell and build |
+| Tailwind CSS 4, shadcn/ui (Radix UI and Base UI primitives) | Styling and components |
+| Motion for React (`motion`) | Animation |
+| Recharts | Charts |
+| D3.js and topojson-client | Dashboard county risk map |
+| MapLibre GL via `react-map-gl` | Dedicated UK Risk Map page (OpenFreeMap vector tiles) |
+| TanStack Query, Sonner, next-themes | Data fetching, toasts, theming |
+| Geist Sans / Geist Mono, Hugeicons, Lucide | Typography and icons |
+| Vitest | Front-end unit tests |
+
+`frontend-vue/` uses Vue 3, Reka UI, ECharts, `motion-v`, D3 and Tailwind CSS 4.
+
+**Backend (`backend/`)**
+
+| Technology | Use |
+|---|---|
+| Python 3.12, FastAPI, Uvicorn | REST API and OpenAPI docs |
+| SQLAlchemy 2, PostgreSQL 16 (`psycopg`) | Persistence. Tests use SQLite |
+| Redis 7 | Best-effort worker wake-up and brand-search cache. The PostgreSQL outbox is the durable queue |
+| Asynchronous worker (`python -m app.worker`) | Outbox consumer with `SELECT … FOR UPDATE SKIP LOCKED` |
+| PyJWT, argon2-cffi | Tokens and password hashing |
+| httpx | Outbound calls to optional integrations |
+
+**Optional integrations**
+
+| Integration | State |
+|---|---|
+| TrueLayer (sandbox) | Operational in code, **sandbox endpoints only**; requires your own client secret |
+| Logo.dev | Operational in code when keys are supplied |
+| OpenFreeMap / OpenStreetMap tiles | Used by the MapLibre risk-map page; no key required |
+| ONS boundary and population data | Bundled static files (Open Government Licence v3.0) |
+
+There is **no** live IP-geolocation provider integration. Geolocation fields are captured with the transaction (the demo data uses a placeholder provider named `synthetic-demo`).
+
+## System Architecture
 
 ```text
                        +---------------------------+
@@ -76,175 +185,214 @@ PostgreSQL is persisted to a named Docker volume. Redis messages are intentional
                        | scoring + audit writes    |
                        +-------------+-------------+
                                      ^
-                                     |
-                          Redis list wakeup signal
+                          Redis list wake-up signal
                                      ^
-                                     |
                                 FastAPI API
 ```
 
-The API commits a `Transaction`, its `OutboxEvent`, and ingestion audit event in **one DB transaction**. An optional Redis `LPUSH` nudges the worker, but a failed or lost notification is harmless because the worker regularly polls the PostgreSQL outbox. The worker locks one event, evaluates enabled rules, writes matched-rule snapshots and any alert, appends screening audit events, marks the outbox event processed, and commits **atomically**. Repeated work on an already screened transaction creates no duplicate alert.
+The API commits a `Transaction`, its `OutboxEvent` and an ingestion audit event in **one database transaction**. A Redis `LPUSH` nudges the worker, but a lost notification is harmless because the worker also polls the PostgreSQL outbox. The worker locks one event, evaluates enabled rules, writes matched-rule snapshots and any alert, appends audit events and marks the event processed, all in one commit. Re-processing an already screened transaction creates no duplicate alert.
 
-PostgreSQL row locking supports multiple workers. Invalid events are retried up to five times and subsequently marked terminal; failing transaction screenings are marked `FAILED` and audited. This is at-least-once event delivery with idempotent screening effects, not a claim of exactly-once messaging.
+Delivery is **at-least-once with idempotent screening effects**, not exactly-once. Events are retried up to five times, then marked terminal and the transaction is marked `FAILED` and audited.
 
-### Seeded detection policies
+More detail: [DESIGN.md](DESIGN.md) (UI) and [RULE.md](RULE.md) (detection logic).
 
-| Rule | Trigger | Weight |
-|---|---|---:|
-| `LARGE_AMOUNT` | Single transaction ≥ 10,000 in the transaction currency | 50 |
-| `WATCHLIST_COUNTRY` | Country code in configured list (seed uses synthetic `ZZ`) | 65 |
-| `HIGH_VELOCITY` | ≥ 3 outgoing transfers in 10 minutes on the same account/currency | 45 |
-| `OUTFLOW_SPIKE` | Outgoing transfers total ≥ 15,000 in 60 minutes on the same account/currency | 35 |
+## Getting Started
 
-The scores are added and capped at 100. The default alert threshold is **40** (configurable in `.env`). A score of at least 75 is High priority, 50–74 Medium, and 40–49 Low. A rule match stores its code, version, configuration snapshot, points, and explanation.
+Prerequisites: **Docker Engine** with **Docker Compose v2** for the full stack, or Python 3.12+ and Node.js 22 for local development.
 
-**Time-window semantics:** Windowed rules use the transaction's `occurred_at` and only compare transfers in the same currency, direction, and account. All already-ingested events in the qualifying event-time window are included, even if not yet screened. Late-arriving transfers do **not** automatically rescore previously screened transactions; batch replay/reconciliation would be needed in a production pipeline. Thresholds are **per currency**, not FX-normalized.
+```bash
+git clone <your-repository-url> detection-monitor
+cd detection-monitor
+cp .env.example .env
+# Replace every example secret in .env before any exposed deployment.
+docker compose up --build
+```
 
-## Example workflow
+Then open:
 
-1. Sign in as Administrator at `http://localhost:8080`.
-2. Examine the overview; sample transactions and screening events are seeded on first startup and the worker will populate alerts shortly afterward.
-3. Select **Transactions → Simulate transaction**. Submit a GBP 12,500 debit (this exceeds the seeded amount rule).
-4. Use the **Refresh** icon if the background worker has not completed screening yet. The UI also refreshes data automatically every 15 seconds.
-5. Open the new case under **Alert queue**. Review matched rules, claim the case, choose **In review**, and record findings.
-6. Close the case with a **Suspicious** or **False positive** disposition and a written note of at least 10 characters.
-7. Go to **Risk rules** to edit a threshold or disable a rule. Versioned edits do not alter historical match snapshots.
-8. Open **Audit history**, then select **Verify audit chain** while signed in as an administrator.
+| Service | URL |
+|---|---|
+| Analyst UI (Nginx + compiled React app) | http://localhost:8080 |
+| Interactive API docs (OpenAPI) | http://localhost:8000/docs |
+| Health check | http://localhost:8000/api/health |
 
-## API usage
+Demo accounts are seeded on first start: `admin@demo.local` (administrator) and `analyst@demo.local` (analyst). Their development-only passwords are the `DEMO_ADMIN_PASSWORD` and `DEMO_ANALYST_PASSWORD` values in `.env.example`. **Never** reuse them with real data or on a public deployment. Passwords are hashed at first seed, so changing `.env` later does not alter an existing database.
 
-Obtain an access token:
+### Local front-end development
+
+```bash
+# terminal 1: docker compose up --build   (API, worker, PostgreSQL, Redis)
+# terminal 2:
+cd frontend
+npm install
+npm run dev        # http://localhost:5173, /api proxied to http://localhost:8000
+```
+
+The Vue variant is run the same way from `frontend-vue/` (`npm install && npm run dev`).
+
+## Environment Configuration
+
+Copy `.env.example` to `.env`. `.env` is git-ignored. Never commit secrets.
+
+| Variable | Purpose | Notes |
+|---|---|---|
+| `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB` | Database credentials | Replace the example password |
+| `JWT_SECRET` | Signs access tokens (HS256) | Use at least 32 random bytes |
+| `DEMO_ADMIN_PASSWORD`, `DEMO_ANALYST_PASSWORD` | Passwords for seeded demo users | Development only |
+| `ALERT_THRESHOLD` | Minimum score that raises an alert | Default `40` |
+| `JWT_TTL_MINUTES` | Token lifetime | Default `480` |
+| `CORS_ORIGIN` | Allowed browser origin | Default `http://localhost:5173` |
+| `EXPORT_ROLES`, `EXPORT_ASYNC_THRESHOLD`, `EXPORT_TTL_SECONDS`, `EXPORT_DIR` | CSV export controls | Defaults: `admin,analyst`, 5000 rows, 900 s |
+| `TRUELAYER_CLIENT_ID`, `TRUELAYER_CLIENT_SECRET`, `TRUELAYER_REDIRECT_URI`, `TRUELAYER_API_URL`, `TRUELAYER_AUTH_URL` | TrueLayer **sandbox** | Keep the secret in your local `.env` only |
+| `LOGO_DEV_SECRET_KEY` | Server-side brand search | Never prefix with `VITE_` |
+| `VITE_LOGO_DEV_PUBLISHABLE_KEY` | Public logo image key | Baked into the front-end bundle by design |
+
+Merchant logos: the free Logo.dev plan requires a visible "Logos provided by Logo.dev" attribution link in production. Logos are visual identifiers only, not evidence that a merchant is legitimate.
+
+## Running with Docker
+
+`compose.yaml` defines five services:
+
+| Service | Image / build | Port |
+|---|---|---|
+| `postgres` | `postgres:16-alpine`, named volume `pgdata` | internal |
+| `redis` | `redis:7-alpine`, persistence disabled | internal |
+| `api` | `./backend` (seeds demo data when `SEED_DEMO=1`) | 8000 |
+| `worker` | `./backend`, `python -m app.worker` | none |
+| `web` | `./frontend` built, served by Nginx (proxies `/api`) | 8080 |
+
+```bash
+docker compose up --build     # start everything
+docker compose logs -f worker # watch screening
+docker compose down           # stop (keeps the database volume)
+docker compose down -v        # stop and delete the database volume
+```
+
+The internal Compose project name is still `sentinel-monitor` and the API title reads "Sentinel", legacy names from before the rebrand.
+
+## API Documentation
+
+The full, interactive reference is served at `/docs` (OpenAPI). All `/api` routes except login and health require `Authorization: Bearer <token>`.
 
 ```bash
 curl -s http://localhost:8000/api/auth/login \
   -H 'Content-Type: application/json' \
-  -d '{"email":"admin@demo.local","password":"ChangeMe123!"}'
-```
+  -d '{"email":"admin@demo.local","password":"<DEMO_ADMIN_PASSWORD from your .env>"}'
 
-Copy the `access_token` value from the JSON response into the command below:
-
-```bash
-TOKEN='PASTE_ACCESS_TOKEN_HERE'
+TOKEN='<access_token from the response>'
 curl -X POST http://localhost:8000/api/transactions \
-  -H "Authorization: Bearer $TOKEN" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "external_id": "DEMO-PAYMENT-1001",
-    "account_id": "acct-retail-01",
-    "amount": "12500.00",
-    "currency": "GBP",
-    "direction": "DEBIT",
-    "counterparty": "Example Vendor",
-    "country": "GB",
-    "occurred_at": "2026-11-13T09:45:00Z"
-  }'
+  -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' \
+  -d '{"external_id":"DEMO-PAYMENT-1001","account_id":"acct-retail-01","amount":"12500.00",
+       "currency":"GBP","direction":"DEBIT","counterparty":"Example Vendor","country":"GB",
+       "occurred_at":"2026-11-13T09:45:00Z"}'
 ```
 
-Replace `occurred_at` with the actual UTC payment timestamp when experimenting with sliding-window rules. Repeating an identical `external_id` and payload returns the existing record with HTTP 200; reusing the ID for different data returns HTTP 409.
-
-### Key endpoints
+Repeating an identical `external_id` and payload returns the existing record (HTTP 200); reusing the ID with different data returns HTTP 409.
 
 | Endpoint | Access | Purpose |
 |---|---|---|
-| `POST /api/auth/login` | Public | Obtain an expiring JWT |
+| `POST /api/auth/login`, `POST /api/auth/logout` | Public / authenticated | Issue and revoke a token |
 | `GET /api/me` | Authenticated | Current user and role |
-| `GET /api/overview` | Authenticated | KPI counts and rates |
-| `GET /api/analytics/daily?days=7` | Authenticated | Daily volume and flagged counts |
-| `GET /api/accounts` | Authenticated | Demo accounts |
-| `POST /api/transactions` | Authenticated | Idempotent transaction ingestion |
-| `GET /api/transactions` | Authenticated | Transaction stream |
-| `GET /api/transactions/{id}` | Authenticated | Transaction with historical rule matches |
-| `GET /api/alerts` | Authenticated | Filtered alert queue |
-| `GET /api/alerts/{id}` | Authenticated | Case and matching rules |
-| `PATCH /api/alerts/{id}` | Authenticated | Assign, escalate, resolve with evidence |
-| `GET /api/rules` | Authenticated | Configured policies |
-| `POST /api/rules` | Administrator | Add a policy |
-| `PATCH /api/rules/{id}` | Administrator | Version-checked policy change |
-| `GET /api/audit` | Authenticated | Recent audit events |
-| `GET /api/audit/verify` | Administrator | Check audit hash-chain integrity |
+| `GET /api/overview`, `GET /api/analytics/daily` | Authenticated | KPIs and daily series |
+| `POST /api/transactions`, `GET /api/transactions[/{id}]` | Authenticated | Ingestion and stream |
+| `GET /api/risk-map` | Authenticated | Alerts with `risk_score >= 60`, by local authority |
+| `GET /api/alerts[/{id}]`, `PATCH /api/alerts/{id}` | Authenticated | Queue, detail, review |
+| `GET /api/alerts/{id}/investigation` | Authenticated | Investigation workspace (PII masked unless admin) |
+| `POST /api/alerts/{id}/evidence-reviewed` | Authenticated | Audited evidence attestation |
+| `GET /api/investigations`, `/summary`, `/stream`, `/export.csv`, `/exports/{job}` | Authenticated (export per `EXPORT_ROLES`) | Register and audited CSV export |
+| `GET /api/watchlist/hits`, `/stream` | Authenticated | Watchlist hit analytics |
+| `GET /api/rules`, `/rules/stats` | Authenticated | Rules and match statistics |
+| `POST /api/rules`, `PATCH /api/rules/{id}` | **Admin** | Create and version-checked update |
+| `GET /api/audit` | Authenticated | Audit events |
+| `GET /api/audit/verify` | **Admin** | Verify hash-chain integrity |
+| `GET /api/merchants`, `POST /api/merchants`, `GET /api/brands/search` | Authenticated | Verified merchant bindings and Logo.dev search |
+| `GET /api/truelayer/connect`, `POST /api/truelayer/import` | **Admin** | TrueLayer sandbox import |
 
-The API is documented at `/docs` using OpenAPI.
+## Detection Rules
 
-## Merchant logos (Logo.dev)
+Four rule kinds are implemented. Seeded demo policies:
 
-- `VITE_LOGO_DEV_PUBLISHABLE_KEY` (`pk_…`, `frontend/.env.local`) builds `img.logo.dev` image URLs in the browser.
-- `LOGO_DEV_SECRET_KEY` (`sk_…`, root `.env`) is used only by the API for `GET /api/brands/search` (Logo.dev `/v2/search`; Redis-cached, retried, rate-limit aware). It is never sent to the frontend.
-- Logos show only for analyst-verified counterparty → domain bindings (`/api/merchants`); search results are suggestions an analyst must confirm. Logos are visual identifiers, not evidence of legitimacy.
-- Free Community plan in production: Logo.dev requires a visible "Logos provided by Logo.dev" link.
+| Code | Kind | Trigger | Weight |
+|---|---|---|---:|
+| `LARGE_AMOUNT` | `AMOUNT_THRESHOLD` | Single payment ≥ 10,000 (transaction currency) | 50 |
+| `WATCHLIST_COUNTRY` | `COUNTRY_WATCHLIST` | Country code in the configured list (seed uses synthetic `ZZ`) | 65 |
+| `HIGH_VELOCITY` | `VELOCITY` | ≥ 3 outgoing payments in 10 minutes, same account and currency | 45 |
+| `OUTFLOW_SPIKE` | `CUMULATIVE_AMOUNT` | Outgoing total ≥ 15,000 in 60 minutes, same account and currency | 35 |
 
-## Running automated tests
+Scores add up and are capped at 100. The default alert threshold is **40**. Thresholds are per currency and are **not** FX-normalised. Full explanation: [RULE.md](RULE.md).
 
-With Python 3.12+ and a working package registry:
+## Transaction Monitoring
+
+The monitoring view lists the transaction stream with score, status and screening state. Each transaction keeps an immutable snapshot of the rules that matched (code, version, configuration, points and reason), so later rule edits never rewrite history. Late-arriving transfers do not automatically re-score earlier transactions.
+
+## UK Risk Map
+
+`GET /api/risk-map` returns open alerts with `risk_score >= 60` (the configured `RISK_MAP_THRESHOLD`), located by the **account's recorded UK local authority** (GSS code). It never uses an IP guess or a street address. Alerts on accounts without a local-authority code are counted as `unlocated` and not plotted. Bands: **60–69 Elevated/Medium-high, 70–84 High, 85–100 Critical**.
+
+## Alerts and Investigations
+
+1. A rule match contributes to a transaction's score.
+2. A score at or above the threshold creates an **alert** (priority `LOW` < 50, `MEDIUM` 50–74, `HIGH` ≥ 75).
+3. An analyst claims the alert, moves it to `IN_REVIEW` or `ESCALATED`, records evidence and notes.
+4. Closing requires a disposition (`SUSPICIOUS` or `FALSE_POSITIVE`) and a note of at least 10 characters. Closed cases are immutable. A confirmed GBP loss can be recorded only when closing as `SUSPICIOUS`.
+5. The investigations register supports filtering and audited CSV export. Personal data (IP addresses, customer addresses) is masked server-side for non-admins.
+
+## Audit History
+
+Every ingestion, screening result, alert, review, rule change, export, merchant verification and personal-data view is appended to a SHA-256-linked log. `GET /api/audit/verify` (admin) recomputes the chain. The chain detects modification of individual entries; it does **not** stop a privileged database user rewriting the entire chain and head. Use external write-once retention for stronger assurance (see [SECURITY.md](SECURITY.md)).
+
+## Demo Mode
+
+On the sign-in page, **Explore with demo data** needs no backend. In this mode:
+
+- All accounts, transactions, alerts and metrics are **simulated** and generated in the browser.
+- Data is held **in memory only** and is lost on reload.
+- A persistent "Demo data" banner and "Simulated feed" indicator are shown.
+- Figures are **not** actual banking transactions and **not** verified real-time fraud events.
+
+The dashboard screenshot in this README was captured in demo mode. The seeded backend data is likewise synthetic: fictional accounts, documentation-range IP addresses (RFC 5737) and the non-existent country code `ZZ`.
+
+## Testing
+
+Backend (51 test functions across six files; they use isolated SQLite databases and an in-memory stand-in for Redis):
 
 ```bash
 cd backend
-python -m venv .venv
-source .venv/bin/activate
+python -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt
 python -m pytest -q
 ```
 
-Tests use isolated SQLite databases and replace Redis notifications with an in-memory stub. They test business logic and API behavior without requiring running PostgreSQL or Redis. PostgreSQL concurrency, Compose startup and browser functionality should also be verified in an integration environment.
-
-## Local frontend development
+Front-end unit tests (Vitest) and a type-checked production build:
 
 ```bash
-# terminal 1: start the Docker services
-# terminal 2:
 cd frontend
 npm install
-npm run dev
-# http://localhost:5173
+npm test
+npm run build
 ```
 
-Vite proxies `/api` to `http://localhost:8000` in development. Production Nginx proxies `/api` to the API container and serves the compiled SPA.
+SQLite tests do not cover PostgreSQL concurrency, Compose start-up or browser behaviour; verify those in an integration environment.
 
-## Project structure
+## Security
 
-```text
-fraud-monitor/
-├── compose.yaml
-├── .env.example
-├── backend/
-│   ├── app/
-│   │   ├── api.py              # REST endpoints, case management, rule CRUD
-│   │   ├── models.py           # SQLAlchemy domain and outbox models
-│   │   ├── schemas.py          # API contracts and input validation
-│   │   ├── security.py         # Argon2 password hashes + JWTs + RBAC
-│   │   ├── seed.py             # Synthetic accounts / rules / events
-│   │   ├── worker.py           # Continuous outbox processor
-│   │   └── services/
-│   │       ├── rules.py        # Detection engine
-│   │       ├── screening.py    # Atomic processing and retries
-│   │       └── audit.py        # Audit hash chain and verification
-│   └── tests/
-│       ├── conftest.py
-│       └── test_monitoring.py
-└── frontend/
-    ├── nginx.conf
-    └── src/
-        ├── App.tsx             # Dashboard, tables, editors, drawers
-        ├── api.ts             # Typed authenticated client
-        ├── types.ts           # Domain types
-        └── styles.css         # Responsive interface
-```
+Authentication uses Argon2-hashed passwords and signed, expiring, revocable JWTs. Authorisation is enforced server-side. See [SECURITY.md](SECURITY.md) for controls, limits, vulnerability reporting and a deployment checklist, and [RISK.md](RISK.md) for the risk register.
 
-## Production-hardening backlog
+## Documentation Index
 
-This is a learning/portfolio **MVP**, not a certified production AML or fraud platform. Production deployments would additionally need:
+| Document | Audience | Content |
+|---|---|---|
+| [README.md](README.md) | Everyone | This overview |
+| [SECURITY.md](SECURITY.md) | Security reviewers, operators | Controls, disclosure, deployment checklist |
+| [DESIGN.md](DESIGN.md) | Designers, front-end developers | Design system and UI conventions |
+| [RULE.md](RULE.md) | Analysts, developers | Detection rules and scoring |
+| [POLICY.md](POLICY.md) | Operators, reviewers | Privacy, retention, access, incident response |
+| [RISK.md](RISK.md) | Reviewers, owners | Risk register |
+| [LICENSE.md](LICENSE.md) | Anyone reusing the code | Licensing status |
+| [COPYRIGHT.md](COPYRIGHT.md) | Anyone reusing assets | Ownership and attribution |
 
-- **Authentication/authorization:** SSO/MFA, service identities for bank integrations, separate ingestion credentials, CSRF/CSP/XSS mitigations, JWT rotation/revocation, rate limiting, and user lifecycle management. Current JWTs are held in React memory (not localStorage) and are intentionally lost on a reload.
-- **Data security:** TLS, KMS-backed encryption, tokenization of customer data, strict access logging, secrets manager, network segmentation, retention/deletion policies and least-privilege DB permissions.
-- **Persistence and schema evolution:** Versioned Alembic migrations, connection limits, partitioned tables, backup/restore testing, and migration-safe rollout (the MVP uses `create_all` on API startup).
-- **Compliance and data quality:** Jurisdiction-specific policies and controlled watchlists, validated sanctions/PEP screening from maintained external datasets, customer identity/beneficial owner context, SAR/STR workflows, case approvals, and regulatory retention. The synthetic `ZZ` watchlist has no real-world compliance significance.
-- **Risk accuracy:** FX-normalized thresholds, account baselines, late-arrival reconciliation/rescreening, event ordering, false-positive metrics, entity linkage and machine-learning augmentation with model governance.
-- **Operational observability:** Metrics, queue-lag SLOs, alert delivery notifications, distributed tracing, dead-letter queue management, replay tools, integration tests against PostgreSQL, and web end-to-end tests.
-- **Audit durability:** Write-once external retention or signed audit exports. A SHA-256 chain in a mutable database detects many modifications but does not protect against a privileged attacker rewriting the entire chain and head.
+## Licence and Copyright
 
-## Implementation notes
+**No open-source or public reuse licence has been granted yet.** Until the owner chooses one, all rights are reserved by default. See [LICENSE.md](LICENSE.md) and [COPYRIGHT.md](COPYRIGHT.md). Third-party components keep their own licences.
 
-- Amounts are validated as `Decimal` and stored as PostgreSQL `NUMERIC(18,2)`.
-- The worker uses DB-level locking; the Redis queue is only a low-latency hint and need not be durable.
-- The UI loads a maximum of 500 transactions and alerts per view. This is intentionally simple; true pagination/aggregation should happen in PostgreSQL for large datasets.
-- Case status transitions are validated on the backend. Closed cases cannot be reopened through this MVP API, and final closure requires a disposition and explanatory note.
-- Demo accounts and transaction IDs are fictional. No production bank credentials, personal data, or payment networks are included.
+Detection Monitor is not affiliated with, endorsed by or approved by the FCA, HM Government or any bank. Product and company names (TrueLayer, Logo.dev, merchant brands) belong to their respective owners.

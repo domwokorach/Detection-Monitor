@@ -9,7 +9,7 @@ const rise = (i: number) => ({ initial: { opacity: 0, y: 18 }, animate: { opacit
 </script>
 
 <template>
-  <section aria-label="Detection-monitor" class="relative isolate flex min-h-[19rem] items-center overflow-hidden border-b border-[#1B344D] bg-[#071426] text-[#F2F7FC] lg:min-h-screen lg:border-r lg:border-b-0">
+  <section aria-label="Detection Monitor" class="relative isolate flex min-h-[19rem] items-center overflow-hidden border-b border-[#1B344D] bg-[#071426] text-[#F2F7FC] lg:min-h-screen lg:border-r lg:border-b-0">
     <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 select-none">
       <!-- Premium cyan ambient lighting -->
       <div class="pointer-events-none absolute -right-20 top-1/4 size-80 rounded-full bg-sky-500/15 blur-3xl" />
@@ -23,7 +23,7 @@ const rise = (i: number) => ({ initial: { opacity: 0, y: 18 }, animate: { opacit
     </div>
 
     <div class="relative z-10 w-full px-6 py-10 sm:px-10 lg:px-14 xl:px-20">
-      <motion.p v-bind="rise(0)" class="text-[17px] font-semibold" style="font-family: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif">Detection-monitor</motion.p>
+      <motion.p v-bind="rise(0)" class="text-[17px] font-bold" style="font-family: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif">Detection Monitor</motion.p>
       <motion.h1 v-bind="rise(1)" class="mt-8 text-[34px] leading-[1.1] font-semibold tracking-[-1.5px] sm:text-[44px] lg:mt-12 lg:text-[52px] xl:text-[60px]" style="font-family: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif">
         Catch detection<br><span class="text-[#BFE8FF]">before it settles.</span>
       </motion.h1>

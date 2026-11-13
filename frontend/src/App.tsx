@@ -24,7 +24,7 @@ const TITLES: Record<Page, string> = { command: 'Operational Overview', transact
 export default function App() {
   const { user, demo, page } = useApp()
   const { resolved } = useTheme()
-  useEffect(() => { document.title = `${TITLES[page]} · Detection-monitor`; window.scrollTo({ top: 0 }) }, [page])
+  useEffect(() => { document.title = `${TITLES[page]} · Detection Monitor`; window.scrollTo({ top: 0 }) }, [page])
   // Strict 5px geometry on the Alerts page; portals (sheet, tooltip) render outside the page so the class lives on <html>.
   useEffect(() => { document.documentElement.classList.toggle('alerts-sharp', page === 'alerts' || page === 'inequality' || page === 'investigations'); return () => document.documentElement.classList.remove('alerts-sharp') }, [page])
   const Page = pages[page]

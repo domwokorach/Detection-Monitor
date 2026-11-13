@@ -14,7 +14,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 export function AuthHeroPanel({ className }: { className?: string }) {
   const reduced = useReducedMotion()
   return (
-    <section aria-label="Detection-monitor" className={cn('relative isolate flex min-h-[19rem] items-center overflow-hidden border-b lg:min-h-svh lg:border-r lg:border-b-0', className)}
+    <section aria-label="Detection Monitor" className={cn('relative isolate flex min-h-[19rem] items-center overflow-hidden border-b lg:min-h-svh lg:border-r lg:border-b-0', className)}
       style={{ background: C.panel, borderColor: C.border, color: C.text }}>
       {/* ---- decorative layers (hidden from assistive tech) ---- */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 select-none">

@@ -37,9 +37,9 @@ export function AnimatedHeroText() {
     : { initial: { opacity: 0, y: 8 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6, ease: EASE, delay } })
   return (
     <div className="relative w-full px-6 py-10 sm:px-10 lg:px-14 xl:px-20">
-      <motion.p {...fade(0)} className="text-[17px] font-semibold" style={{ color: C.text }}>Detection-monitor</motion.p>
+      <motion.h1 {...fade(0)} className="text-[30px] font-bold tracking-[-0.035em]" style={{ color: C.text }}>Detection Monitor</motion.h1>
 
-      <h1 className="mt-8 text-[34px] leading-[1.08] font-semibold tracking-[-0.04em] sm:text-[44px] lg:mt-12 lg:text-[52px] xl:text-[60px]">
+      <h2 className="mt-8 text-4xl leading-[1.08] font-semibold tracking-[-0.04em] sm:text-[44px] lg:text-[52px] xl:text-[60px]">
         <span className="sr-only">Catch detection before it settles.</span>
         {reduced ? (
           <span aria-hidden="true"><span className="block" style={{ color: C.text }}>Catch detection</span><span className="block" style={{ color: C.ice }}>before it settles.</span></span>
@@ -49,9 +49,9 @@ export function AnimatedHeroText() {
             <Line color={C.ice} options={LINE_2}>before it settles.</Line>
           </span>
         )}
-      </h1>
+      </h2>
 
-      <motion.p {...fade(HEADLINE_END - 0.1)} className="mt-5 max-w-[480px] text-sm leading-[1.75] sm:text-[15px]" style={{ color: C.muted }}>
+      <motion.p {...fade(HEADLINE_END - 0.1)} className="mt-5 max-w-md text-sm leading-7 sm:text-[15px]" style={{ color: C.muted }}>
         Event-time rule screening, analyst case management and a tamper-evident audit trail in one workspace.
       </motion.p>
 

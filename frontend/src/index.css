@@ -59,9 +59,9 @@
     --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Detection-monitor palette. Dark is the default theme (the <html> element carries .dark). */
+/* Detection Monitor palette. Dark is the default theme (the <html> element carries .dark). */
 .dark {
-    --app: #020D1B;
+    --app: #030B14;
     --background: #071426;
     --foreground: #F2F7FC;
     --card: #0B1E33;
@@ -98,39 +98,39 @@
 }
 
 :root:not(.dark) {
-    --app: #E9F0F7;
-    --background: #F3F7FB;
-    --foreground: #0B1E33;
+    --app: #F4F8FC;
+    --background: #FFFFFF;
+    --foreground: #10263D;
     --card: #FFFFFF;
-    --card-foreground: #0B1E33;
+    --card-foreground: #10263D;
     --popover: #FFFFFF;
-    --popover-foreground: #0B1E33;
-    --primary: #1F6FB5;
+    --popover-foreground: #10263D;
+    --primary: #1769A8;
     --primary-foreground: #FFFFFF;
-    --secondary: #EDF3F9;
-    --secondary-foreground: #0B1E33;
-    --muted: #EDF3F9;
-    --muted-foreground: #4A6580;
+    --secondary: #EEF4FA;
+    --secondary-foreground: #10263D;
+    --muted: #EEF4FA;
+    --muted-foreground: #52677D;
     --subtle: #5F7890;
-    --accent: #E3EDF6;
-    --accent-foreground: #0B1E33;
+    --accent: #E4EEF7;
+    --accent-foreground: #10263D;
     --destructive: #C2334A;
-    --border: #D3E0EC;
-    --input: #D3E0EC;
-    --ring: #1F6FB5;
-    --hl: #2A86CF;
+    --border: #CFDDEA;
+    --input: #CFDDEA;
+    --ring: #1769A8;
+    --hl: #1F78BD;
     --ice: #0F4C81;
     --ok: #0F8A74;
     --sev-crit: #C2334A; --sev-high: #B35F12; --sev-med: #8F6A10; --sev-low: #17788D;
-    --chart-1: #1F6FB5; --chart-2: #2A86CF; --chart-3: #0F4C81; --chart-4: #4F9BD9; --chart-5: #8DB4D6;
-    --sidebar: #F8FBFE;
-    --sidebar-foreground: #0B1E33;
-    --sidebar-primary: #1F6FB5;
+    --chart-1: #1769A8; --chart-2: #2A86CF; --chart-3: #0F4C81; --chart-4: #4F9BD9; --chart-5: #8DB4D6;
+    --sidebar: #EAF2FA;
+    --sidebar-foreground: #10263D;
+    --sidebar-primary: #1769A8;
     --sidebar-primary-foreground: #FFFFFF;
-    --sidebar-accent: #E3EDF6;
-    --sidebar-accent-foreground: #0B1E33;
-    --sidebar-border: #D3E0EC;
-    --sidebar-ring: #1F6FB5;
+    --sidebar-accent: #DCE9F5;
+    --sidebar-accent-foreground: #10263D;
+    --sidebar-border: #CFDDEA;
+    --sidebar-ring: #1769A8;
     --radius: 0.625rem;
 }
 
@@ -159,7 +159,7 @@
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
 
-/* D3 risk map layers (the map panel stays deep navy in both themes) */
+/* D3 risk map layers: deep navy surface in dark mode, pale blue-grey surface in light mode */
 .uk-nation { fill: #0B1D31; stroke: #1F4466; stroke-linejoin: round; transition: opacity .3s; }
 .uk-area { stroke: #16324D; stroke-opacity: .75; fill: none; pointer-events: none; transition: opacity .3s; }
 .uk-area.has-risk { pointer-events: all; cursor: pointer; }
@@ -170,6 +170,13 @@
 .uk-marker:hover { fill-opacity: .7; }
 .uk-area.is-selected { stroke: #F2F7FC; stroke-opacity: 1; }
 .uk-marker.is-selected { stroke: #fff; fill-opacity: .7; }
+
+:root:not(.dark) .uk-nation { fill: #E3EDF7; stroke: #8FAAC4; }
+:root:not(.dark) .uk-area { stroke: #A9BFD3; stroke-opacity: .9; }
+:root:not(.dark) .uk-area.has-risk:hover { stroke: #1769A8; }
+:root:not(.dark) .uk-area.is-selected { stroke: #10263D; }
+:root:not(.dark) .uk-marker { mix-blend-mode: multiply; stroke: #0F4C81; }
+:root:not(.dark) .uk-marker.is-selected { stroke: #10263D; }
 
 /* Alerts page: sharp 5px geometry everywhere, including portalled sheets, dialogs, tooltips and popovers. */
 html.alerts-sharp.dark { --app: #030B14; }
@@ -188,3 +195,8 @@ html.alerts-sharp .dash-card { transition-duration: .2s; }
 .dark .wh-well { background: #030B14; border-color: var(--border); }
 .wh-scope .recharts-cartesian-axis-tick-value { fill: var(--muted-foreground); font-family: var(--font-mono); }
 .wh-scope .rounded-full { border-radius: 9999px !important; }
+
+/* Short colour cross-fade while the theme switch is toggled (class is added by ThemeProvider for ~350ms). */
+html.theme-transition, html.theme-transition *, html.theme-transition *::before, html.theme-transition *::after {
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease, fill .3s ease, stroke .3s ease !important;
+}

@@ -195,7 +195,7 @@ export const RiskMap = forwardRef<RiskMapHandle, { locations: CountyRisk[]; unlo
         </div>
       </div>
 
-      <div ref={box} className="relative min-h-[320px] flex-1 overflow-hidden rounded-lg border bg-[radial-gradient(ellipse_at_50%_40%,#0C2036,#06111F)]">
+      <div ref={box} className="relative min-h-[320px] flex-1 overflow-hidden rounded-lg border bg-[radial-gradient(ellipse_at_50%_40%,#F7FAFD,#DDE9F4)] dark:bg-[radial-gradient(ellipse_at_50%_40%,#0C2036,#06111F)]">
         <svg ref={svgEl} className="absolute inset-0 size-full touch-none" role="img" aria-label="Map of UK counties shaded by fraud risk for alerts scoring 60 and above, with markers sized by suspicious transactions. Use the county search or the Top Risk Locations list for keyboard access." />
         {!geo && !error && <div className="absolute inset-3 animate-pulse rounded-md bg-white/5" role="status" aria-label="Loading UK boundaries" />}
         {error && <div className="absolute inset-0 grid place-items-center p-6 text-center text-xs text-sev-crit" role="alert">{error}</div>}

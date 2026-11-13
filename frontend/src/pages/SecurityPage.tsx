@@ -15,9 +15,9 @@ const sections: LegalSection[] = [
   { id: 'risk', heading: 'Risk management', body: <>
     <p>Alerts are raised by configurable rules and scored 0–100. Scores of 60 and above are treated as high-risk: Elevated 60–69, High 70–84, Critical 85–100. Every alert is reviewed by a person who records a disposition and note.</p>
     <p>Geographic views use the local authority held on the account. IP-based location is shown as a provider estimate, never as a verified or street-level position.</p></> },
-  { id: 'assurance', heading: 'Certifications and assurance', body: <p>Detection-monitor has <strong>no</strong> security certification (such as ISO 27001 or SOC 2) and has not been through an independent penetration test or regulatory approval. None is claimed. Operators should carry out their own risk assessment before processing live customer data.</p> },
+  { id: 'assurance', heading: 'Certifications and assurance', body: <p>Detection Monitor has <strong>no</strong> security certification (such as ISO 27001 or SOC 2) and has not been through an independent penetration test or regulatory approval. None is claimed. Operators should carry out their own risk assessment before processing live customer data.</p> },
   { id: 'report', heading: 'Reporting a vulnerability', body: <>
-    <p>If you find a security weakness, please report it privately so it can be fixed before it is made public. Contact your organisation’s Detection-monitor administrator or security team; the Operator must publish a dedicated security contact here before production use.</p>
+    <p>If you find a security weakness, please report it privately so it can be fixed before it is made public. Contact your organisation’s Detection Monitor administrator or security team; the Operator must publish a dedicated security contact here before production use.</p>
     <ul><li>Describe what you found, the steps to reproduce it and its likely impact.</li><li>Do not access, change or keep data that is not yours, and do not disrupt the service.</li><li>Allow reasonable time for a fix before disclosing details.</li></ul>
     <p>Reports will be acknowledged and triaged, and reporters acting in good faith will be kept informed of progress.</p></> },
 ]

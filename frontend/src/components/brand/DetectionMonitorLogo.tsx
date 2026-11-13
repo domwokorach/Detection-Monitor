@@ -39,7 +39,7 @@ export function DetectionMonitorMark({ size = 36, className, ...props }: MarkPro
 type LogoProps = {
   /** Mark size in px. Defaults to 36 (expanded sidebar). */
   size?: number
-  /** Show the "Detection-monitor" wordmark beside the mark. */
+  /** Show the "Detection Monitor" wordmark beside the mark. */
   showName?: boolean
   /** Show the secondary caption under the name. */
   showCaption?: boolean
@@ -55,7 +55,7 @@ type LogoProps = {
  */
 export function DetectionMonitorLogo({ size = 36, showName = true, showCaption = true, collapseWithSidebar = false, className, onNavigate }: LogoProps) {
   return (
-    <a href="#/dashboard" aria-label="Detection-monitor — Dashboard" onClick={onNavigate}
+    <a href="#/dashboard" aria-label="Detection Monitor — Dashboard" onClick={onNavigate}
       className={cn(
         'group/logo flex min-w-0 items-center rounded-[5px] outline-none',
         'focus-visible:ring-2 focus-visible:ring-sidebar-ring focus-visible:ring-offset-2 focus-visible:ring-offset-sidebar',
@@ -73,7 +73,7 @@ export function DetectionMonitorLogo({ size = 36, showName = true, showCaption =
             'ml-3 flex min-w-0 flex-col overflow-hidden leading-tight',
             collapseWithSidebar && 'max-w-[200px] transition-[max-width,margin,opacity] duration-200 ease-linear motion-reduce:transition-none group-data-[collapsible=icon]:ml-0 group-data-[collapsible=icon]:max-w-0 group-data-[collapsible=icon]:opacity-0',
           )}>
-          <span className="truncate text-base font-semibold tracking-[-0.3px] text-sidebar-foreground">Detection-monitor</span>
+          <span className="truncate text-base font-bold tracking-[-0.3px] text-sidebar-foreground">Detection Monitor</span>
           {showCaption && <span className="truncate text-[11px] text-muted-foreground dark:text-[#8CA2BA]">Financial Intelligence Platform</span>}
         </span>
       )}

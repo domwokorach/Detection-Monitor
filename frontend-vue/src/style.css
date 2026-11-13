@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 /* Theming: every colour token resolves through a CSS variable, so Dark (default), Light and System
-   all update every component at once. Dark values are the Detection-monitor palette. */
+   all update every component at once. Dark values are the Detection Monitor palette. */
 @theme inline {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;

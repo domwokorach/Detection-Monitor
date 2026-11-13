@@ -20,8 +20,8 @@ export function DashboardFooter() {
         <div className="flex items-center gap-2.5">
           <DetectionMonitorMark size={22} />
           <div className="leading-tight">
-            <p className="text-xs font-medium text-foreground">Detection-monitor</p>
-            <p className="text-[11px] text-muted-foreground">© {new Date().getFullYear()} Detection-monitor. All rights reserved.</p>
+            <p className="text-xs font-bold text-foreground">Detection Monitor</p>
+            <p className="text-[11px] text-muted-foreground">© {new Date().getFullYear()} Detection Monitor. All rights reserved.</p>
           </div>
         </div>
         <nav aria-label="Legal and support" className="-mx-2 lg:mx-0">

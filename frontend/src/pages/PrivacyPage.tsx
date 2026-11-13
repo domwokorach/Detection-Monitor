@@ -2,7 +2,7 @@ import { LegalPage, type LegalSection } from '@/components/app/legal-page'
 
 const sections: LegalSection[] = [
   { id: 'who', heading: 'Who is responsible', body: <>
-    <p>Detection-monitor is software. The organisation that deploys it (the “Operator”) decides why and how personal information is processed and is the controller under UK GDPR and the Data Protection Act 2018. The Operator’s name, address and data-protection contact must be added here before publication.</p></> },
+    <p>Detection Monitor is software. The organisation that deploys it (the “Operator”) decides why and how personal information is processed and is the controller under UK GDPR and the Data Protection Act 2018. The Operator’s name, address and data-protection contact must be added here before publication.</p></> },
   { id: 'collect', heading: 'Information we collect', body: <>
     <ul>
       <li><strong>Platform users:</strong> name, work email, role, a salted password hash (never the password), sign-in and session records.</li>

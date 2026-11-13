@@ -31,7 +31,7 @@ const collapsed = ref(false)
 const mobileOpen = ref(false)
 const current = computed(() => views[page.value] ?? Placeholder)
 const range = computed({ get: () => String(rangeDays.value), set: v => { rangeDays.value = v === '14' ? 14 : 7 } })
-watch(page, () => { document.title = `${titles[page.value][0]} · Detection-monitor`; window.scrollTo({ top: 0 }) }, { immediate: true })
+watch(page, () => { document.title = `${titles[page.value][0]} · Detection Monitor`; window.scrollTo({ top: 0 }) }, { immediate: true })
 </script>
 
 <template>

@@ -35,7 +35,6 @@ export function Topbar() {
         <Badge variant="outline" className="hidden gap-1.5 font-normal text-muted-foreground sm:inline-flex" role="status" title={lastUpdated ? `Last updated ${lastUpdated.toLocaleTimeString('en-GB')}` : ''}>
           <Activity className={live ? 'text-ok' : 'text-sev-med'} aria-hidden="true" />{live ? (demo ? 'Simulated feed' : 'Live monitoring') : 'Reconnecting…'}
         </Badge>
-        <ThemeToggle />
         <Popover open={open} onOpenChange={o => { setOpen(o); if (!o) setSeenAt(Date.now()) }}>
           <PopoverTrigger asChild>
             <Button variant="outline" size="icon" className="relative" aria-label="Notifications"><Bell aria-hidden="true" />
@@ -52,6 +51,7 @@ export function Topbar() {
             ))}
           </PopoverContent>
         </Popover>
+        <ThemeToggle />
         <UserMenu />
       </div>
     </header>

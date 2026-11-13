@@ -2,7 +2,7 @@ import { LegalPage, type LegalSection } from '@/components/app/legal-page'
 
 const sections: LegalSection[] = [
   { id: 'scope', heading: 'About these terms', body: <>
-    <p>Detection-monitor is a transaction-monitoring and fraud-investigation platform. These terms govern use of the platform by people your organisation has authorised. By signing in you confirm that you have read them and will follow them together with your organisation’s own policies.</p>
+    <p>Detection Monitor is a transaction-monitoring and fraud-investigation platform. These terms govern use of the platform by people your organisation has authorised. By signing in you confirm that you have read them and will follow them together with your organisation’s own policies.</p>
     <p>The organisation that deploys and administers this instance (the “Operator”) is responsible for the data processed in it. Where these terms refer to “we”, they mean the Operator.</p></> },
   { id: 'access', heading: 'Authorised access', body: <>
     <p>Access is limited to named individuals. Two roles exist: <strong>analyst</strong> (review alerts and cases) and <strong>admin</strong> (also manages risk rules and configuration). Sensitive personal fields are masked unless your role allows you to see them.</p>
@@ -21,7 +21,7 @@ const sections: LegalSection[] = [
   { id: 'liability', heading: 'Liability and governing law', body: <>
     <p>Nothing in these terms limits liability that cannot lawfully be limited. Subject to that, the Operator’s liability for use of the platform, and the allocation of responsibility between the Operator and its suppliers, is to be set out here by the Operator’s legal advisers.</p>
     <p>Governing law and jurisdiction (for example the law of England and Wales) are to be confirmed by the Operator before publication.</p></> },
-  { id: 'contact', heading: 'Questions', body: <p>Contact your Detection-monitor administrator for questions about these terms. See also the <a href="#/privacy">Privacy Policy</a> and <a href="#/security">Risk &amp; Security</a> pages.</p> },
+  { id: 'contact', heading: 'Questions', body: <p>Contact your Detection Monitor administrator for questions about these terms. See also the <a href="#/privacy">Privacy Policy</a> and <a href="#/security">Risk &amp; Security</a> pages.</p> },
 ]
 
 export default function TermsPage() {

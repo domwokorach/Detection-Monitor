@@ -19,7 +19,7 @@ const go = (e: MouseEvent) => { e.preventDefault(); navigate('overview'); emit('
 </script>
 
 <template>
-  <a href="#/dashboard" aria-label="Detection-monitor — Dashboard" class="dm-logo focus-ring group/logo flex min-w-0 items-center rounded-[5px]" @click="go">
+  <a href="#/dashboard" aria-label="Detection Monitor — Dashboard" class="dm-logo focus-ring group/logo flex min-w-0 items-center rounded-[5px]" @click="go">
     <svg viewBox="0 0 100 100" :width="size" :height="size" fill="none" aria-hidden="true" focusable="false"
       class="dm-mark shrink-0 transition-[filter,width,height] duration-200 ease-out" :style="collapsed ? { width: '32px', height: '32px' } : undefined">
       <defs>
@@ -33,7 +33,7 @@ const go = (e: MouseEvent) => { e.preventDefault(); navigate('overview'); emit('
       <path fill="#071426" d="M47.5 55.5 46.9 62.4q0 .9.9.9h4.4q.9 0 .9-.9L52.5 55.5Z" />
     </svg>
     <span v-if="showName" aria-hidden="true" class="dm-name ml-3 flex min-w-0 flex-col overflow-hidden leading-tight" :class="collapsed && 'dm-name-hidden'">
-      <span class="truncate text-base font-semibold tracking-[-0.3px] text-fg" style="font-family: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif">Detection-monitor</span>
+      <span class="truncate text-base font-bold tracking-[-0.3px] text-fg" style="font-family: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif">Detection Monitor</span>
       <span v-if="showCaption" class="dm-caption truncate text-[11px]" style="font-family: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif">Financial Intelligence Platform</span>
     </span>
   </a>
