@@ -8,6 +8,16 @@
 
 Event-time rule screening, analyst case management and a tamper-evident audit trail in one workspace.
 
+<p align="center">
+  <a href="https://detection-monitor.vercel.app/"><b>Live application</b></a> ·
+  <a href="https://github.com/domwokorach/Detection-Monitor/releases">Releases</a> ·
+  <a href="#github-packages">GitHub Packages</a> ·
+  <a href="SECURITY.md">Security Policy</a> ·
+  <a href="#documentation-index">Documentation</a>
+</p>
+
+<p align="center"><sub>The live application runs on <b>synthetic demonstration data</b> only. No real customer or transaction data is used.</sub></p>
+
 </div>
 
 <br />
@@ -57,6 +67,7 @@ Detection Monitor is a UK-focused transaction monitoring, AML analytics and inve
 - [Audit History](#audit-history)
 - [Demo Mode](#demo-mode)
 - [Testing](#testing)
+- [GitHub Packages](#github-packages)
 - [Security](#security)
 - [Documentation Index](#documentation-index)
 - [Licence and Copyright](#licence-and-copyright)
@@ -373,6 +384,57 @@ npm run build
 ```
 
 SQLite tests do not cover PostgreSQL concurrency, Compose start-up or browser behaviour; verify those in an integration environment.
+
+## GitHub Packages
+
+Container images are published to the GitHub Container Registry (GHCR) by [`.github/workflows/publish-packages.yml`](.github/workflows/publish-packages.yml).
+
+| Component | Image | Built from |
+|---|---|---|
+| Backend API | [`ghcr.io/domwokorach/detection-monitor-api`](https://github.com/domwokorach/Detection-Monitor/pkgs/container/detection-monitor-api) | `backend/Dockerfile` |
+| Frontend (React, served by Nginx) | [`ghcr.io/domwokorach/detection-monitor-web`](https://github.com/domwokorach/Detection-Monitor/pkgs/container/detection-monitor-web) | `frontend/Dockerfile` |
+| Worker | reuses the API image | command `python -m app.worker` |
+
+PostgreSQL and Redis are not published; use the official `postgres:16-alpine` and `redis:7-alpine` images. All packages are listed at <https://github.com/domwokorach?tab=packages&repo_name=Detection-Monitor>.
+
+### Versioning
+
+Releases use [semantic versioning](https://semver.org/). To publish `v0.1.0`:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The workflow runs the backend and frontend tests, scans dependencies and each image (HIGH/CRITICAL fixable findings fail the run), then pushes both images with an SBOM and provenance attestation. Nothing is uploaded if any step fails.
+
+| Trigger | Tags published |
+|---|---|
+| `v1.2.3` | `1.2.3`, `1.2`, `1` (not `1` while on `0.x`), `latest` |
+| `v1.2.3-rc.1` (prerelease) | `1.2.3-rc.1` only. Never `latest` |
+| Manual run (Actions > Publish packages > Run workflow) | `preview-<short-sha>` only |
+
+Each run's summary lists the immutable digest. Deploy by digest to be certain of what you run.
+
+### Pull
+
+```bash
+docker pull ghcr.io/domwokorach/detection-monitor-api:0.1.0
+docker pull ghcr.io/domwokorach/detection-monitor-web:0.1.0
+
+# Pin to an immutable digest (shown in the workflow run summary)
+docker pull ghcr.io/domwokorach/detection-monitor-api@sha256:<digest>
+```
+
+### Deployment guidance
+
+- Run the worker from the API image: `docker run ... ghcr.io/domwokorach/detection-monitor-api:0.1.0 python -m app.worker`.
+- Configuration is **not** baked in. Supply `DATABASE_URL`, `REDIS_URL`, `JWT_SECRET`, demo passwords and any TrueLayer or Logo.dev secrets at run time (environment or your platform's secret store). See [Environment Configuration](#environment-configuration).
+- The web image proxies `/api/` to a host named `api` on port 8000; give the API container that network alias.
+- The published web image is built without a Logo.dev publishable key. Rebuild locally with `--build-arg VITE_LOGO_DEV_PUBLISHABLE_KEY=...` if you want brand logos.
+- Packages are private until you change visibility under *Package settings*. Review the contents before making them public.
+
+> **Development only.** These images are a portfolio MVP built for evaluation with synthetic data. They are not production-certified, contain no real banking data, and the defaults in `compose.yaml` (for example `JWT_SECRET`) are placeholders you must replace. See [SECURITY.md](SECURITY.md) and [RISK.md](RISK.md).
 
 ## Security
 

@@ -1,0 +1,171 @@
+name: Publish packages
+
+# Publishes the backend API and frontend images to GitHub Container Registry.
+#   - Push a semver tag (v0.1.0, v0.2.0-rc.1) to publish a release.
+#   - Run manually (Actions > Publish packages > Run workflow) for a preview image.
+# The worker has no image of its own: it runs the API image with
+#   command: ["python", "-m", "app.worker"]
+
+on:
+  push:
+    tags: ["v[0-9]+.[0-9]+.[0-9]+", "v[0-9]+.[0-9]+.[0-9]+-*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-packages-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate release tag
+        if: github.ref_type == 'tag'
+        run: |
+          if ! [[ "$GITHUB_REF_NAME" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::'$GITHUB_REF_NAME' is not a semantic version tag (vMAJOR.MINOR.PATCH[-prerelease])"
+            exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements-dev.txt
+      - name: Backend tests
+        working-directory: backend
+        run: |
+          pip install -r requirements-dev.txt
+          python -m pytest -q
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Frontend tests and type-checked build
+        working-directory: frontend
+        run: |
+          npm ci --no-audit --no-fund
+          npm test
+          npm run build
+
+      - name: Dependency vulnerability scan
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          scanners: vuln
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+          skip-dirs: frontend-vue,uk-cities-inequality,uk-population-map,node_modules
+
+  publish:
+    name: Publish ${{ matrix.package }}
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - package: detection-monitor-api
+            context: backend
+          - package: detection-monitor-web
+            context: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve image name
+        run: |
+          # GHCR requires lowercase repository paths.
+          owner="$(echo "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')"
+          echo "IMAGE=${REGISTRY}/${owner}/${{ matrix.package }}" >> "$GITHUB_ENV"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Image tags and labels
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE }}
+          # Tag push: 1.2.3, 1.2, 1 and latest -- but only for stable (non-prerelease) versions.
+          # Manual run: preview-<short sha> only; never a version tag or latest.
+          tags: |
+            type=semver,pattern={{version}},enable=${{ github.ref_type == 'tag' }}
+            type=semver,pattern={{major}}.{{minor}},enable=${{ github.ref_type == 'tag' && !contains(github.ref_name, '-') }}
+            type=semver,pattern={{major}},enable=${{ github.ref_type == 'tag' && !contains(github.ref_name, '-') && !startsWith(github.ref_name, 'v0.') }}
+            type=raw,value=latest,enable=${{ github.ref_type == 'tag' && !contains(github.ref_name, '-') }}
+            type=raw,value=preview-{{sha}},enable=${{ github.event_name == 'workflow_dispatch' }}
+          labels: |
+            org.opencontainers.image.title=${{ matrix.package }}
+            org.opencontainers.image.description=Detection Monitor (development-only portfolio MVP, synthetic data)
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+
+      # Build once locally and scan before anything is uploaded.
+      # No build args are passed: the images contain no keys or production configuration.
+      - name: Build image for scanning
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          load: true
+          push: false
+          tags: scan-target:${{ matrix.package }}
+          cache-from: type=gha,scope=${{ matrix.package }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.package }}
+
+      - name: Scan image for vulnerabilities
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: scan-target:${{ matrix.package }}
+          scanners: vuln
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+
+      - name: Publish image (with SBOM and provenance)
+        id: push
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          sbom: true
+          provenance: mode=max
+          cache-from: type=gha,scope=${{ matrix.package }}
+
+      - name: Summary
+        run: |
+          {
+            echo "### ${{ matrix.package }}"
+            echo ""
+            echo "Digest (immutable): \`${{ steps.push.outputs.digest }}\`"
+            echo ""
+            echo '```bash'
+            echo "docker pull ${IMAGE}@${{ steps.push.outputs.digest }}"
+            echo '```'
+            echo ""
+            echo "Tags:"
+            echo '```'
+            echo "${{ steps.meta.outputs.tags }}"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
