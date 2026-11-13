@@ -1,0 +1,37 @@
+city,nation,year,geography,population,p10,p90,ratio,cv_p10,cv_p90,status,note
+London,England,2002,Greater London (region),7376671,5.62,26.05,4.635,0.7,3.3,ok,
+Birmingham,England,2002,Birmingham LA,990384,4.81,16.68,3.468,1.3,8.3,ok,
+Manchester,England,2002,Manchester LA,428221,,,,,,suppressed,ONS suppressed P90 (x)
+Liverpool,England,2002,Liverpool LA,443784,4.57,15.62,3.418,1.4,14.0,ok,
+Leeds,England,2002,Leeds LA,716380,4.81,17.19,3.574,1.2,9.3,ok,
+Sheffield,England,2002,Sheffield LA,514201,4.65,16.91,3.637,1.2,9.9,ok,
+Bristol,England,2002,Bristol LA,389735,4.75,17.41,3.665,1.8,13.0,ok,
+Newcastle upon Tyne,England,2002,Newcastle upon Tyne LA,267001,4.62,17.15,3.712,2.0,16.0,ok,
+Nottingham,England,2002,Nottingham LA,271769,,,,,,suppressed,ONS suppressed P90 (x)
+Leicester,England,2002,Leicester LA,285295,,,,,,suppressed,ONS suppressed P90 (x)
+Coventry,England,2002,Coventry LA,301295,,,,,,suppressed,ONS suppressed P90 (x)
+Cardiff,Wales,2002,Cardiff LA,312021,4.8,19.17,3.994,1.8,16.0,ok,
+Swansea,Wales,2002,Swansea LA,224755,,,,,,suppressed,ONS suppressed P90 (x)
+Glasgow,Scotland,2002,Glasgow City LA,576450,4.55,15.06,3.31,1.2,12.0,ok,
+Edinburgh,Scotland,2002,City of Edinburgh LA,447500,4.99,20.59,4.126,1.3,12.0,ok,
+Aberdeen,Scotland,2002,Aberdeen City LA,210680,,,,,,suppressed,ONS suppressed P90 (x)
+Dundee,Scotland,2002,Dundee City LA,144370,4.69,14.63,3.119,3.0,0.6,ok,
+Belfast,Northern Ireland,2002,Belfast LGD,328471,,,,,,not_published,Not covered by ASHE Table 8 (place of residence)
+London,England,2015,Greater London (region),8659545,7.35,32.5,4.422,0.5,2.3,ok,
+Birmingham,England,2015,Birmingham LA,1114932,6.67,22.65,3.396,0.6,6.2,ok,
+Manchester,England,2015,Manchester LA,523321,6.58,22.52,3.422,0.8,11.0,ok,
+Liverpool,England,2015,Liverpool LA,469953,6.69,23.18,3.465,0.7,10.0,ok,
+Leeds,England,2015,Leeds LA,777987,6.88,24.79,3.603,0.9,7.4,ok,
+Sheffield,England,2015,Sheffield LA,555074,6.77,22.48,3.321,1.1,9.6,ok,
+Bristol,England,2015,Bristol LA,451790,7.0,24.2,3.457,1.1,10.0,ok,
+Newcastle upon Tyne,England,2015,Newcastle upon Tyne LA,287955,6.54,24.07,3.68,0.7,19.0,ok,
+Nottingham,England,2015,Nottingham LA,313265,,,,,,suppressed,ONS suppressed P90 (x)
+Leicester,England,2015,Leicester LA,349853,6.5,19.97,3.072,0.4,14.0,ok,
+Coventry,England,2015,Coventry LA,331112,6.78,24.43,3.603,1.0,11.0,ok,
+Cardiff,Wales,2015,Cardiff LA,351600,6.74,27.23,4.04,1.2,13.0,ok,
+Swansea,Wales,2015,Swansea LA,239354,6.59,23.85,3.619,1.2,16.0,ok,
+Glasgow,Scotland,2015,Glasgow City LA,595200,6.75,22.93,3.397,1.2,9.9,ok,
+Edinburgh,Scotland,2015,City of Edinburgh LA,490280,7.15,27.38,3.829,1.3,11.0,ok,
+Aberdeen,Scotland,2015,Aberdeen City LA,226680,,,,,,suppressed,ONS suppressed P90 (x)
+Dundee,Scotland,2015,Dundee City LA,147320,,,,,,suppressed,ONS suppressed P90 (x)
+Belfast,Northern Ireland,2015,Belfast LGD,340194,,,,,,not_published,Not covered by ASHE Table 8 (place of residence)

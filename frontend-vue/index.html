@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#020D1B" />
+    <title>Detection-monitor — AML Command Center</title>
+    <script>
+      // Apply the saved theme before first paint (dark by default) to avoid a flash.
+      (function () {
+        var m = 'dark';
+        try { var s = localStorage.getItem('detection-monitor.theme'); if (s === 'light' || s === 'dark' || s === 'system') m = s; } catch (e) {}
+        var t = m === 'system' ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : m;
+        document.documentElement.dataset.theme = t; document.documentElement.style.colorScheme = t;
+        document.documentElement.classList.toggle('dark', t === 'dark');
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

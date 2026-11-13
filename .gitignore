@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+*.db
+.pytest_cache/
+node_modules/
+dist/
+*.egg-info/
+.vite/
+.env.local
+*.local
+*.tsbuildinfo

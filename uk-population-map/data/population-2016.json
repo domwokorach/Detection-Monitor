@@ -1,0 +1,2746 @@
+{
+ "year": 2016,
+ "reference": "Mid-2016 population estimate (30 June 2016), all ages, usual residents",
+ "source": "Office for National Statistics, Population Estimates for UK, England and Wales, Scotland and Northern Ireland: mid-2016, sheet MYE5",
+ "sourceUrl": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland",
+ "licence": "Open Government Licence v3.0",
+ "areas": [
+  {
+   "code": "E06000001",
+   "name": "Hartlepool",
+   "nation": "England",
+   "population": 92817,
+   "areaKm2": 94.0
+  },
+  {
+   "code": "E06000002",
+   "name": "Middlesbrough",
+   "nation": "England",
+   "population": 140398,
+   "areaKm2": 54.0
+  },
+  {
+   "code": "E06000003",
+   "name": "Redcar and Cleveland",
+   "nation": "England",
+   "population": 135404,
+   "areaKm2": 245.0
+  },
+  {
+   "code": "E06000004",
+   "name": "Stockton-on-Tees",
+   "nation": "England",
+   "population": 195681,
+   "areaKm2": 205.0
+  },
+  {
+   "code": "E06000005",
+   "name": "Darlington",
+   "nation": "England",
+   "population": 105646,
+   "areaKm2": 197.0
+  },
+  {
+   "code": "E06000006",
+   "name": "Halton",
+   "nation": "England",
+   "population": 126903,
+   "areaKm2": 79.0
+  },
+  {
+   "code": "E06000007",
+   "name": "Warrington",
+   "nation": "England",
+   "population": 208809,
+   "areaKm2": 181.0
+  },
+  {
+   "code": "E06000008",
+   "name": "Blackburn with Darwen",
+   "nation": "England",
+   "population": 147049,
+   "areaKm2": 137.0
+  },
+  {
+   "code": "E06000009",
+   "name": "Blackpool",
+   "nation": "England",
+   "population": 139195,
+   "areaKm2": 35.0
+  },
+  {
+   "code": "E06000010",
+   "name": "Kingston upon Hull, City of",
+   "nation": "England",
+   "population": 260240,
+   "areaKm2": 71.0
+  },
+  {
+   "code": "E06000011",
+   "name": "East Riding of Yorkshire",
+   "nation": "England",
+   "population": 337696,
+   "areaKm2": 2405.0
+  },
+  {
+   "code": "E06000012",
+   "name": "North East Lincolnshire",
+   "nation": "England",
+   "population": 159144,
+   "areaKm2": 192.0
+  },
+  {
+   "code": "E06000013",
+   "name": "North Lincolnshire",
+   "nation": "England",
+   "population": 170786,
+   "areaKm2": 846.0
+  },
+  {
+   "code": "E06000014",
+   "name": "York",
+   "nation": "England",
+   "population": 208367,
+   "areaKm2": 272.0
+  },
+  {
+   "code": "E06000015",
+   "name": "Derby",
+   "nation": "England",
+   "population": 256233,
+   "areaKm2": 78.0
+  },
+  {
+   "code": "E06000016",
+   "name": "Leicester",
+   "nation": "England",
+   "population": 348343,
+   "areaKm2": 73.0
+  },
+  {
+   "code": "E06000017",
+   "name": "Rutland",
+   "nation": "England",
+   "population": 38606,
+   "areaKm2": 382.0
+  },
+  {
+   "code": "E06000018",
+   "name": "Nottingham",
+   "nation": "England",
+   "population": 325282,
+   "areaKm2": 75.0
+  },
+  {
+   "code": "E06000019",
+   "name": "Herefordshire, County of",
+   "nation": "England",
+   "population": 189309,
+   "areaKm2": 2180.0
+  },
+  {
+   "code": "E06000020",
+   "name": "Telford and Wrekin",
+   "nation": "England",
+   "population": 172976,
+   "areaKm2": 290.0
+  },
+  {
+   "code": "E06000021",
+   "name": "Stoke-on-Trent",
+   "nation": "England",
+   "population": 253226,
+   "areaKm2": 93.0
+  },
+  {
+   "code": "E06000022",
+   "name": "Bath and North East Somerset",
+   "nation": "England",
+   "population": 187751,
+   "areaKm2": 346.0
+  },
+  {
+   "code": "E06000023",
+   "name": "Bristol, City of",
+   "nation": "England",
+   "population": 454213,
+   "areaKm2": 110.0
+  },
+  {
+   "code": "E06000024",
+   "name": "North Somerset",
+   "nation": "England",
+   "population": 211681,
+   "areaKm2": 374.0
+  },
+  {
+   "code": "E06000025",
+   "name": "South Gloucestershire",
+   "nation": "England",
+   "population": 277623,
+   "areaKm2": 497.0
+  },
+  {
+   "code": "E06000026",
+   "name": "Plymouth",
+   "nation": "England",
+   "population": 264199,
+   "areaKm2": 80.0
+  },
+  {
+   "code": "E06000027",
+   "name": "Torbay",
+   "nation": "England",
+   "population": 133883,
+   "areaKm2": 63.0
+  },
+  {
+   "code": "E06000028",
+   "name": "Bournemouth",
+   "nation": "England",
+   "population": 197657,
+   "areaKm2": 46.0
+  },
+  {
+   "code": "E06000029",
+   "name": "Poole",
+   "nation": "England",
+   "population": 151500,
+   "areaKm2": 65.0
+  },
+  {
+   "code": "E06000030",
+   "name": "Swindon",
+   "nation": "England",
+   "population": 217905,
+   "areaKm2": 230.0
+  },
+  {
+   "code": "E06000031",
+   "name": "Peterborough",
+   "nation": "England",
+   "population": 197095,
+   "areaKm2": 343.0
+  },
+  {
+   "code": "E06000032",
+   "name": "Luton",
+   "nation": "England",
+   "population": 216791,
+   "areaKm2": 43.0
+  },
+  {
+   "code": "E06000033",
+   "name": "Southend-on-Sea",
+   "nation": "England",
+   "population": 179799,
+   "areaKm2": 42.0
+  },
+  {
+   "code": "E06000034",
+   "name": "Thurrock",
+   "nation": "England",
+   "population": 167025,
+   "areaKm2": 163.0
+  },
+  {
+   "code": "E06000035",
+   "name": "Medway",
+   "nation": "England",
+   "population": 278542,
+   "areaKm2": 194.0
+  },
+  {
+   "code": "E06000036",
+   "name": "Bracknell Forest",
+   "nation": "England",
+   "population": 119447,
+   "areaKm2": 109.0
+  },
+  {
+   "code": "E06000037",
+   "name": "West Berkshire",
+   "nation": "England",
+   "population": 156837,
+   "areaKm2": 704.0
+  },
+  {
+   "code": "E06000038",
+   "name": "Reading",
+   "nation": "England",
+   "population": 162666,
+   "areaKm2": 40.0
+  },
+  {
+   "code": "E06000039",
+   "name": "Slough",
+   "nation": "England",
+   "population": 147181,
+   "areaKm2": 33.0
+  },
+  {
+   "code": "E06000040",
+   "name": "Windsor and Maidenhead",
+   "nation": "England",
+   "population": 148814,
+   "areaKm2": 197.0
+  },
+  {
+   "code": "E06000041",
+   "name": "Wokingham",
+   "nation": "England",
+   "population": 161878,
+   "areaKm2": 179.0
+  },
+  {
+   "code": "E06000042",
+   "name": "Milton Keynes",
+   "nation": "England",
+   "population": 264479,
+   "areaKm2": 309.0
+  },
+  {
+   "code": "E06000043",
+   "name": "Brighton and Hove",
+   "nation": "England",
+   "population": 289229,
+   "areaKm2": 83.0
+  },
+  {
+   "code": "E06000044",
+   "name": "Portsmouth",
+   "nation": "England",
+   "population": 214832,
+   "areaKm2": 40.0
+  },
+  {
+   "code": "E06000045",
+   "name": "Southampton",
+   "nation": "England",
+   "population": 254275,
+   "areaKm2": 50.0
+  },
+  {
+   "code": "E06000046",
+   "name": "Isle of Wight",
+   "nation": "England",
+   "population": 139798,
+   "areaKm2": 380.0
+  },
+  {
+   "code": "E06000047",
+   "name": "County Durham",
+   "nation": "England",
+   "population": 522143,
+   "areaKm2": 2226.0
+  },
+  {
+   "code": "E06000049",
+   "name": "Cheshire East",
+   "nation": "England",
+   "population": 376695,
+   "areaKm2": 1166.0
+  },
+  {
+   "code": "E06000050",
+   "name": "Cheshire West and Chester",
+   "nation": "England",
+   "population": 335680,
+   "areaKm2": 917.0
+  },
+  {
+   "code": "E06000051",
+   "name": "Shropshire",
+   "nation": "England",
+   "population": 313373,
+   "areaKm2": 3197.0
+  },
+  {
+   "code": "E06000052",
+   "name": "Cornwall",
+   "nation": "England",
+   "population": 553687,
+   "areaKm2": 3546.0
+  },
+  {
+   "code": "E06000053",
+   "name": "Isles of Scilly",
+   "nation": "England",
+   "population": 2308,
+   "areaKm2": 16.0
+  },
+  {
+   "code": "E06000054",
+   "name": "Wiltshire",
+   "nation": "England",
+   "population": 488409,
+   "areaKm2": 3255.0
+  },
+  {
+   "code": "E06000055",
+   "name": "Bedford",
+   "nation": "England",
+   "population": 168751,
+   "areaKm2": 476.0
+  },
+  {
+   "code": "E06000056",
+   "name": "Central Bedfordshire",
+   "nation": "England",
+   "population": 278937,
+   "areaKm2": 716.0
+  },
+  {
+   "code": "E06000057",
+   "name": "Northumberland",
+   "nation": "England",
+   "population": 316002,
+   "areaKm2": 5014.0
+  },
+  {
+   "code": "E07000004",
+   "name": "Aylesbury Vale",
+   "nation": "England",
+   "population": 193113,
+   "areaKm2": 903.0
+  },
+  {
+   "code": "E07000005",
+   "name": "Chiltern",
+   "nation": "England",
+   "population": 95103,
+   "areaKm2": 196.0
+  },
+  {
+   "code": "E07000006",
+   "name": "South Bucks",
+   "nation": "England",
+   "population": 69636,
+   "areaKm2": 141.0
+  },
+  {
+   "code": "E07000007",
+   "name": "Wycombe",
+   "nation": "England",
+   "population": 176868,
+   "areaKm2": 325.0
+  },
+  {
+   "code": "E07000008",
+   "name": "Cambridge",
+   "nation": "England",
+   "population": 131799,
+   "areaKm2": 41.0
+  },
+  {
+   "code": "E07000009",
+   "name": "East Cambridgeshire",
+   "nation": "England",
+   "population": 87825,
+   "areaKm2": 651.0
+  },
+  {
+   "code": "E07000010",
+   "name": "Fenland",
+   "nation": "England",
+   "population": 100182,
+   "areaKm2": 546.0
+  },
+  {
+   "code": "E07000011",
+   "name": "Huntingdonshire",
+   "nation": "England",
+   "population": 175666,
+   "areaKm2": 906.0
+  },
+  {
+   "code": "E07000012",
+   "name": "South Cambridgeshire",
+   "nation": "England",
+   "population": 156468,
+   "areaKm2": 902.0
+  },
+  {
+   "code": "E07000026",
+   "name": "Allerdale",
+   "nation": "England",
+   "population": 96956,
+   "areaKm2": 1242.0
+  },
+  {
+   "code": "E07000027",
+   "name": "Barrow-in-Furness",
+   "nation": "England",
+   "population": 67321,
+   "areaKm2": 78.0
+  },
+  {
+   "code": "E07000028",
+   "name": "Carlisle",
+   "nation": "England",
+   "population": 108409,
+   "areaKm2": 1039.0
+  },
+  {
+   "code": "E07000029",
+   "name": "Copeland",
+   "nation": "England",
+   "population": 69307,
+   "areaKm2": 732.0
+  },
+  {
+   "code": "E07000030",
+   "name": "Eden",
+   "nation": "England",
+   "population": 52639,
+   "areaKm2": 2142.0
+  },
+  {
+   "code": "E07000031",
+   "name": "South Lakeland",
+   "nation": "England",
+   "population": 103274,
+   "areaKm2": 1534.0
+  },
+  {
+   "code": "E07000032",
+   "name": "Amber Valley",
+   "nation": "England",
+   "population": 124645,
+   "areaKm2": 265.0
+  },
+  {
+   "code": "E07000033",
+   "name": "Bolsover",
+   "nation": "England",
+   "population": 78082,
+   "areaKm2": 160.0
+  },
+  {
+   "code": "E07000034",
+   "name": "Chesterfield",
+   "nation": "England",
+   "population": 104440,
+   "areaKm2": 66.0
+  },
+  {
+   "code": "E07000035",
+   "name": "Derbyshire Dales",
+   "nation": "England",
+   "population": 71288,
+   "areaKm2": 792.0
+  },
+  {
+   "code": "E07000036",
+   "name": "Erewash",
+   "nation": "England",
+   "population": 114891,
+   "areaKm2": 110.0
+  },
+  {
+   "code": "E07000037",
+   "name": "High Peak",
+   "nation": "England",
+   "population": 91662,
+   "areaKm2": 539.0
+  },
+  {
+   "code": "E07000038",
+   "name": "North East Derbyshire",
+   "nation": "England",
+   "population": 100423,
+   "areaKm2": 276.0
+  },
+  {
+   "code": "E07000039",
+   "name": "South Derbyshire",
+   "nation": "England",
+   "population": 100334,
+   "areaKm2": 338.0
+  },
+  {
+   "code": "E07000040",
+   "name": "East Devon",
+   "nation": "England",
+   "population": 139908,
+   "areaKm2": 814.0
+  },
+  {
+   "code": "E07000041",
+   "name": "Exeter",
+   "nation": "England",
+   "population": 129801,
+   "areaKm2": 47.0
+  },
+  {
+   "code": "E07000042",
+   "name": "Mid Devon",
+   "nation": "England",
+   "population": 79789,
+   "areaKm2": 913.0
+  },
+  {
+   "code": "E07000043",
+   "name": "North Devon",
+   "nation": "England",
+   "population": 94615,
+   "areaKm2": 1086.0
+  },
+  {
+   "code": "E07000044",
+   "name": "South Hams",
+   "nation": "England",
+   "population": 84306,
+   "areaKm2": 886.0
+  },
+  {
+   "code": "E07000045",
+   "name": "Teignbridge",
+   "nation": "England",
+   "population": 129856,
+   "areaKm2": 674.0
+  },
+  {
+   "code": "E07000046",
+   "name": "Torridge",
+   "nation": "England",
+   "population": 66977,
+   "areaKm2": 984.0
+  },
+  {
+   "code": "E07000047",
+   "name": "West Devon",
+   "nation": "England",
+   "population": 54582,
+   "areaKm2": 1160.0
+  },
+  {
+   "code": "E07000048",
+   "name": "Christchurch",
+   "nation": "England",
+   "population": 49481,
+   "areaKm2": 50.0
+  },
+  {
+   "code": "E07000049",
+   "name": "East Dorset",
+   "nation": "England",
+   "population": 89093,
+   "areaKm2": 354.0
+  },
+  {
+   "code": "E07000050",
+   "name": "North Dorset",
+   "nation": "England",
+   "population": 71064,
+   "areaKm2": 609.0
+  },
+  {
+   "code": "E07000051",
+   "name": "Purbeck",
+   "nation": "England",
+   "population": 46336,
+   "areaKm2": 404.0
+  },
+  {
+   "code": "E07000052",
+   "name": "West Dorset",
+   "nation": "England",
+   "population": 101382,
+   "areaKm2": 1082.0
+  },
+  {
+   "code": "E07000053",
+   "name": "Weymouth and Portland",
+   "nation": "England",
+   "population": 65371,
+   "areaKm2": 42.0
+  },
+  {
+   "code": "E07000061",
+   "name": "Eastbourne",
+   "nation": "England",
+   "population": 103054,
+   "areaKm2": 44.0
+  },
+  {
+   "code": "E07000062",
+   "name": "Hastings",
+   "nation": "England",
+   "population": 92236,
+   "areaKm2": 30.0
+  },
+  {
+   "code": "E07000063",
+   "name": "Lewes",
+   "nation": "England",
+   "population": 101381,
+   "areaKm2": 292.0
+  },
+  {
+   "code": "E07000064",
+   "name": "Rother",
+   "nation": "England",
+   "population": 93551,
+   "areaKm2": 509.0
+  },
+  {
+   "code": "E07000065",
+   "name": "Wealden",
+   "nation": "England",
+   "population": 157575,
+   "areaKm2": 833.0
+  },
+  {
+   "code": "E07000066",
+   "name": "Basildon",
+   "nation": "England",
+   "population": 183378,
+   "areaKm2": 110.0
+  },
+  {
+   "code": "E07000067",
+   "name": "Braintree",
+   "nation": "England",
+   "population": 150999,
+   "areaKm2": 612.0
+  },
+  {
+   "code": "E07000068",
+   "name": "Brentwood",
+   "nation": "England",
+   "population": 76386,
+   "areaKm2": 153.0
+  },
+  {
+   "code": "E07000069",
+   "name": "Castle Point",
+   "nation": "England",
+   "population": 89731,
+   "areaKm2": 45.0
+  },
+  {
+   "code": "E07000070",
+   "name": "Chelmsford",
+   "nation": "England",
+   "population": 174089,
+   "areaKm2": 339.0
+  },
+  {
+   "code": "E07000071",
+   "name": "Colchester",
+   "nation": "England",
+   "population": 186635,
+   "areaKm2": 329.0
+  },
+  {
+   "code": "E07000072",
+   "name": "Epping Forest",
+   "nation": "England",
+   "population": 130321,
+   "areaKm2": 339.0
+  },
+  {
+   "code": "E07000073",
+   "name": "Harlow",
+   "nation": "England",
+   "population": 85995,
+   "areaKm2": 31.0
+  },
+  {
+   "code": "E07000074",
+   "name": "Maldon",
+   "nation": "England",
+   "population": 63350,
+   "areaKm2": 359.0
+  },
+  {
+   "code": "E07000075",
+   "name": "Rochford",
+   "nation": "England",
+   "population": 85670,
+   "areaKm2": 169.0
+  },
+  {
+   "code": "E07000076",
+   "name": "Tendring",
+   "nation": "England",
+   "population": 142598,
+   "areaKm2": 338.0
+  },
+  {
+   "code": "E07000077",
+   "name": "Uttlesford",
+   "nation": "England",
+   "population": 86188,
+   "areaKm2": 641.0
+  },
+  {
+   "code": "E07000078",
+   "name": "Cheltenham",
+   "nation": "England",
+   "population": 117530,
+   "areaKm2": 47.0
+  },
+  {
+   "code": "E07000079",
+   "name": "Cotswold",
+   "nation": "England",
+   "population": 85756,
+   "areaKm2": 1165.0
+  },
+  {
+   "code": "E07000080",
+   "name": "Forest of Dean",
+   "nation": "England",
+   "population": 85385,
+   "areaKm2": 526.0
+  },
+  {
+   "code": "E07000081",
+   "name": "Gloucester",
+   "nation": "England",
+   "population": 128488,
+   "areaKm2": 41.0
+  },
+  {
+   "code": "E07000082",
+   "name": "Stroud",
+   "nation": "England",
+   "population": 117381,
+   "areaKm2": 461.0
+  },
+  {
+   "code": "E07000083",
+   "name": "Tewkesbury",
+   "nation": "England",
+   "population": 88589,
+   "areaKm2": 414.0
+  },
+  {
+   "code": "E07000084",
+   "name": "Basingstoke and Deane",
+   "nation": "England",
+   "population": 174588,
+   "areaKm2": 634.0
+  },
+  {
+   "code": "E07000085",
+   "name": "East Hampshire",
+   "nation": "England",
+   "population": 117955,
+   "areaKm2": 514.0
+  },
+  {
+   "code": "E07000086",
+   "name": "Eastleigh",
+   "nation": "England",
+   "population": 129635,
+   "areaKm2": 80.0
+  },
+  {
+   "code": "E07000087",
+   "name": "Fareham",
+   "nation": "England",
+   "population": 115423,
+   "areaKm2": 74.0
+  },
+  {
+   "code": "E07000088",
+   "name": "Gosport",
+   "nation": "England",
+   "population": 85363,
+   "areaKm2": 25.0
+  },
+  {
+   "code": "E07000089",
+   "name": "Hart",
+   "nation": "England",
+   "population": 94250,
+   "areaKm2": 215.0
+  },
+  {
+   "code": "E07000090",
+   "name": "Havant",
+   "nation": "England",
+   "population": 123640,
+   "areaKm2": 55.0
+  },
+  {
+   "code": "E07000091",
+   "name": "New Forest",
+   "nation": "England",
+   "population": 179236,
+   "areaKm2": 753.0
+  },
+  {
+   "code": "E07000092",
+   "name": "Rushmoor",
+   "nation": "England",
+   "population": 96327,
+   "areaKm2": 39.0
+  },
+  {
+   "code": "E07000093",
+   "name": "Test Valley",
+   "nation": "England",
+   "population": 122044,
+   "areaKm2": 628.0
+  },
+  {
+   "code": "E07000094",
+   "name": "Winchester",
+   "nation": "England",
+   "population": 121965,
+   "areaKm2": 661.0
+  },
+  {
+   "code": "E07000095",
+   "name": "Broxbourne",
+   "nation": "England",
+   "population": 96779,
+   "areaKm2": 51.0
+  },
+  {
+   "code": "E07000096",
+   "name": "Dacorum",
+   "nation": "England",
+   "population": 152692,
+   "areaKm2": 212.0
+  },
+  {
+   "code": "E07000098",
+   "name": "Hertsmere",
+   "nation": "England",
+   "population": 103528,
+   "areaKm2": 101.0
+  },
+  {
+   "code": "E07000099",
+   "name": "North Hertfordshire",
+   "nation": "England",
+   "population": 132747,
+   "areaKm2": 375.0
+  },
+  {
+   "code": "E07000102",
+   "name": "Three Rivers",
+   "nation": "England",
+   "population": 92533,
+   "areaKm2": 89.0
+  },
+  {
+   "code": "E07000103",
+   "name": "Watford",
+   "nation": "England",
+   "population": 96773,
+   "areaKm2": 21.0
+  },
+  {
+   "code": "E07000105",
+   "name": "Ashford",
+   "nation": "England",
+   "population": 126151,
+   "areaKm2": 581.0
+  },
+  {
+   "code": "E07000106",
+   "name": "Canterbury",
+   "nation": "England",
+   "population": 162416,
+   "areaKm2": 309.0
+  },
+  {
+   "code": "E07000107",
+   "name": "Dartford",
+   "nation": "England",
+   "population": 105543,
+   "areaKm2": 73.0
+  },
+  {
+   "code": "E07000108",
+   "name": "Dover",
+   "nation": "England",
+   "population": 114227,
+   "areaKm2": 315.0
+  },
+  {
+   "code": "E07000109",
+   "name": "Gravesham",
+   "nation": "England",
+   "population": 106808,
+   "areaKm2": 99.0
+  },
+  {
+   "code": "E07000110",
+   "name": "Maidstone",
+   "nation": "England",
+   "population": 166360,
+   "areaKm2": 393.0
+  },
+  {
+   "code": "E07000111",
+   "name": "Sevenoaks",
+   "nation": "England",
+   "population": 119142,
+   "areaKm2": 369.0
+  },
+  {
+   "code": "E07000112",
+   "name": "Shepway",
+   "nation": "England",
+   "population": 111190,
+   "areaKm2": 357.0
+  },
+  {
+   "code": "E07000113",
+   "name": "Swale",
+   "nation": "England",
+   "population": 145042,
+   "areaKm2": 374.0
+  },
+  {
+   "code": "E07000114",
+   "name": "Thanet",
+   "nation": "England",
+   "population": 140652,
+   "areaKm2": 103.0
+  },
+  {
+   "code": "E07000115",
+   "name": "Tonbridge and Malling",
+   "nation": "England",
+   "population": 127293,
+   "areaKm2": 240.0
+  },
+  {
+   "code": "E07000116",
+   "name": "Tunbridge Wells",
+   "nation": "England",
+   "population": 117069,
+   "areaKm2": 331.0
+  },
+  {
+   "code": "E07000117",
+   "name": "Burnley",
+   "nation": "England",
+   "population": 87522,
+   "areaKm2": 111.0
+  },
+  {
+   "code": "E07000118",
+   "name": "Chorley",
+   "nation": "England",
+   "population": 114351,
+   "areaKm2": 203.0
+  },
+  {
+   "code": "E07000119",
+   "name": "Fylde",
+   "nation": "England",
+   "population": 77990,
+   "areaKm2": 166.0
+  },
+  {
+   "code": "E07000120",
+   "name": "Hyndburn",
+   "nation": "England",
+   "population": 80537,
+   "areaKm2": 73.0
+  },
+  {
+   "code": "E07000121",
+   "name": "Lancaster",
+   "nation": "England",
+   "population": 143517,
+   "areaKm2": 576.0
+  },
+  {
+   "code": "E07000122",
+   "name": "Pendle",
+   "nation": "England",
+   "population": 90588,
+   "areaKm2": 169.0
+  },
+  {
+   "code": "E07000123",
+   "name": "Preston",
+   "nation": "England",
+   "population": 141801,
+   "areaKm2": 142.0
+  },
+  {
+   "code": "E07000124",
+   "name": "Ribble Valley",
+   "nation": "England",
+   "population": 58826,
+   "areaKm2": 583.0
+  },
+  {
+   "code": "E07000125",
+   "name": "Rossendale",
+   "nation": "England",
+   "population": 69886,
+   "areaKm2": 138.0
+  },
+  {
+   "code": "E07000126",
+   "name": "South Ribble",
+   "nation": "England",
+   "population": 110118,
+   "areaKm2": 113.0
+  },
+  {
+   "code": "E07000127",
+   "name": "West Lancashire",
+   "nation": "England",
+   "population": 113401,
+   "areaKm2": 347.0
+  },
+  {
+   "code": "E07000128",
+   "name": "Wyre",
+   "nation": "England",
+   "population": 110261,
+   "areaKm2": 282.0
+  },
+  {
+   "code": "E07000129",
+   "name": "Blaby",
+   "nation": "England",
+   "population": 97703,
+   "areaKm2": 130.0
+  },
+  {
+   "code": "E07000130",
+   "name": "Charnwood",
+   "nation": "England",
+   "population": 179389,
+   "areaKm2": 279.0
+  },
+  {
+   "code": "E07000131",
+   "name": "Harborough",
+   "nation": "England",
+   "population": 90416,
+   "areaKm2": 592.0
+  },
+  {
+   "code": "E07000132",
+   "name": "Hinckley and Bosworth",
+   "nation": "England",
+   "population": 110102,
+   "areaKm2": 297.0
+  },
+  {
+   "code": "E07000133",
+   "name": "Melton",
+   "nation": "England",
+   "population": 50878,
+   "areaKm2": 481.0
+  },
+  {
+   "code": "E07000134",
+   "name": "North West Leicestershire",
+   "nation": "England",
+   "population": 98644,
+   "areaKm2": 279.0
+  },
+  {
+   "code": "E07000135",
+   "name": "Oadby and Wigston",
+   "nation": "England",
+   "population": 55825,
+   "areaKm2": 24.0
+  },
+  {
+   "code": "E07000136",
+   "name": "Boston",
+   "nation": "England",
+   "population": 67564,
+   "areaKm2": 365.0
+  },
+  {
+   "code": "E07000137",
+   "name": "East Lindsey",
+   "nation": "England",
+   "population": 138443,
+   "areaKm2": 1765.0
+  },
+  {
+   "code": "E07000138",
+   "name": "Lincoln",
+   "nation": "England",
+   "population": 97795,
+   "areaKm2": 36.0
+  },
+  {
+   "code": "E07000139",
+   "name": "North Kesteven",
+   "nation": "England",
+   "population": 113297,
+   "areaKm2": 922.0
+  },
+  {
+   "code": "E07000140",
+   "name": "South Holland",
+   "nation": "England",
+   "population": 92387,
+   "areaKm2": 751.0
+  },
+  {
+   "code": "E07000141",
+   "name": "South Kesteven",
+   "nation": "England",
+   "population": 140193,
+   "areaKm2": 943.0
+  },
+  {
+   "code": "E07000142",
+   "name": "West Lindsey",
+   "nation": "England",
+   "population": 93734,
+   "areaKm2": 1156.0
+  },
+  {
+   "code": "E07000143",
+   "name": "Breckland",
+   "nation": "England",
+   "population": 137032,
+   "areaKm2": 1305.0
+  },
+  {
+   "code": "E07000144",
+   "name": "Broadland",
+   "nation": "England",
+   "population": 127455,
+   "areaKm2": 552.0
+  },
+  {
+   "code": "E07000145",
+   "name": "Great Yarmouth",
+   "nation": "England",
+   "population": 99164,
+   "areaKm2": 174.0
+  },
+  {
+   "code": "E07000146",
+   "name": "King's Lynn and West Norfolk",
+   "nation": "England",
+   "population": 151589,
+   "areaKm2": 1439.0
+  },
+  {
+   "code": "E07000147",
+   "name": "North Norfolk",
+   "nation": "England",
+   "population": 103752,
+   "areaKm2": 962.0
+  },
+  {
+   "code": "E07000148",
+   "name": "Norwich",
+   "nation": "England",
+   "population": 141041,
+   "areaKm2": 39.0
+  },
+  {
+   "code": "E07000149",
+   "name": "South Norfolk",
+   "nation": "England",
+   "population": 132837,
+   "areaKm2": 908.0
+  },
+  {
+   "code": "E07000150",
+   "name": "Corby",
+   "nation": "England",
+   "population": 68187,
+   "areaKm2": 80.0
+  },
+  {
+   "code": "E07000151",
+   "name": "Daventry",
+   "nation": "England",
+   "population": 81316,
+   "areaKm2": 663.0
+  },
+  {
+   "code": "E07000152",
+   "name": "East Northamptonshire",
+   "nation": "England",
+   "population": 90999,
+   "areaKm2": 510.0
+  },
+  {
+   "code": "E07000153",
+   "name": "Kettering",
+   "nation": "England",
+   "population": 99002,
+   "areaKm2": 233.0
+  },
+  {
+   "code": "E07000154",
+   "name": "Northampton",
+   "nation": "England",
+   "population": 225474,
+   "areaKm2": 81.0
+  },
+  {
+   "code": "E07000155",
+   "name": "South Northamptonshire",
+   "nation": "England",
+   "population": 89959,
+   "areaKm2": 634.0
+  },
+  {
+   "code": "E07000156",
+   "name": "Wellingborough",
+   "nation": "England",
+   "population": 78191,
+   "areaKm2": 163.0
+  },
+  {
+   "code": "E07000163",
+   "name": "Craven",
+   "nation": "England",
+   "population": 56308,
+   "areaKm2": 1177.0
+  },
+  {
+   "code": "E07000164",
+   "name": "Hambleton",
+   "nation": "England",
+   "population": 90537,
+   "areaKm2": 1311.0
+  },
+  {
+   "code": "E07000165",
+   "name": "Harrogate",
+   "nation": "England",
+   "population": 156312,
+   "areaKm2": 1308.0
+  },
+  {
+   "code": "E07000166",
+   "name": "Richmondshire",
+   "nation": "England",
+   "population": 53732,
+   "areaKm2": 1319.0
+  },
+  {
+   "code": "E07000167",
+   "name": "Ryedale",
+   "nation": "England",
+   "population": 53486,
+   "areaKm2": 1507.0
+  },
+  {
+   "code": "E07000168",
+   "name": "Scarborough",
+   "nation": "England",
+   "population": 107824,
+   "areaKm2": 816.0
+  },
+  {
+   "code": "E07000169",
+   "name": "Selby",
+   "nation": "England",
+   "population": 86667,
+   "areaKm2": 599.0
+  },
+  {
+   "code": "E07000170",
+   "name": "Ashfield",
+   "nation": "England",
+   "population": 124482,
+   "areaKm2": 110.0
+  },
+  {
+   "code": "E07000171",
+   "name": "Bassetlaw",
+   "nation": "England",
+   "population": 114847,
+   "areaKm2": 638.0
+  },
+  {
+   "code": "E07000172",
+   "name": "Broxtowe",
+   "nation": "England",
+   "population": 112671,
+   "areaKm2": 80.0
+  },
+  {
+   "code": "E07000173",
+   "name": "Gedling",
+   "nation": "England",
+   "population": 116501,
+   "areaKm2": 120.0
+  },
+  {
+   "code": "E07000174",
+   "name": "Mansfield",
+   "nation": "England",
+   "population": 107435,
+   "areaKm2": 77.0
+  },
+  {
+   "code": "E07000175",
+   "name": "Newark and Sherwood",
+   "nation": "England",
+   "population": 119570,
+   "areaKm2": 651.0
+  },
+  {
+   "code": "E07000176",
+   "name": "Rushcliffe",
+   "nation": "England",
+   "population": 115204,
+   "areaKm2": 409.0
+  },
+  {
+   "code": "E07000177",
+   "name": "Cherwell",
+   "nation": "England",
+   "population": 146338,
+   "areaKm2": 589.0
+  },
+  {
+   "code": "E07000178",
+   "name": "Oxford",
+   "nation": "England",
+   "population": 161291,
+   "areaKm2": 46.0
+  },
+  {
+   "code": "E07000179",
+   "name": "South Oxfordshire",
+   "nation": "England",
+   "population": 138128,
+   "areaKm2": 679.0
+  },
+  {
+   "code": "E07000180",
+   "name": "Vale of White Horse",
+   "nation": "England",
+   "population": 128738,
+   "areaKm2": 578.0
+  },
+  {
+   "code": "E07000181",
+   "name": "West Oxfordshire",
+   "nation": "England",
+   "population": 108674,
+   "areaKm2": 714.0
+  },
+  {
+   "code": "E07000187",
+   "name": "Mendip",
+   "nation": "England",
+   "population": 112545,
+   "areaKm2": 739.0
+  },
+  {
+   "code": "E07000188",
+   "name": "Sedgemoor",
+   "nation": "England",
+   "population": 121436,
+   "areaKm2": 564.0
+  },
+  {
+   "code": "E07000189",
+   "name": "South Somerset",
+   "nation": "England",
+   "population": 165645,
+   "areaKm2": 959.0
+  },
+  {
+   "code": "E07000190",
+   "name": "Taunton Deane",
+   "nation": "England",
+   "population": 115515,
+   "areaKm2": 462.0
+  },
+  {
+   "code": "E07000191",
+   "name": "West Somerset",
+   "nation": "England",
+   "population": 34306,
+   "areaKm2": 725.0
+  },
+  {
+   "code": "E07000192",
+   "name": "Cannock Chase",
+   "nation": "England",
+   "population": 98534,
+   "areaKm2": 79.0
+  },
+  {
+   "code": "E07000193",
+   "name": "East Staffordshire",
+   "nation": "England",
+   "population": 116701,
+   "areaKm2": 387.0
+  },
+  {
+   "code": "E07000194",
+   "name": "Lichfield",
+   "nation": "England",
+   "population": 103061,
+   "areaKm2": 331.0
+  },
+  {
+   "code": "E07000195",
+   "name": "Newcastle-under-Lyme",
+   "nation": "England",
+   "population": 128467,
+   "areaKm2": 211.0
+  },
+  {
+   "code": "E07000196",
+   "name": "South Staffordshire",
+   "nation": "England",
+   "population": 111180,
+   "areaKm2": 407.0
+  },
+  {
+   "code": "E07000197",
+   "name": "Stafford",
+   "nation": "England",
+   "population": 134155,
+   "areaKm2": 598.0
+  },
+  {
+   "code": "E07000198",
+   "name": "Staffordshire Moorlands",
+   "nation": "England",
+   "population": 98069,
+   "areaKm2": 576.0
+  },
+  {
+   "code": "E07000199",
+   "name": "Tamworth",
+   "nation": "England",
+   "population": 76955,
+   "areaKm2": 31.0
+  },
+  {
+   "code": "E07000200",
+   "name": "Babergh",
+   "nation": "England",
+   "population": 89498,
+   "areaKm2": 594.0
+  },
+  {
+   "code": "E07000201",
+   "name": "Forest Heath",
+   "nation": "England",
+   "population": 64447,
+   "areaKm2": 378.0
+  },
+  {
+   "code": "E07000202",
+   "name": "Ipswich",
+   "nation": "England",
+   "population": 135908,
+   "areaKm2": 40.0
+  },
+  {
+   "code": "E07000203",
+   "name": "Mid Suffolk",
+   "nation": "England",
+   "population": 100014,
+   "areaKm2": 871.0
+  },
+  {
+   "code": "E07000204",
+   "name": "St Edmundsbury",
+   "nation": "England",
+   "population": 112938,
+   "areaKm2": 657.0
+  },
+  {
+   "code": "E07000205",
+   "name": "Suffolk Coastal",
+   "nation": "England",
+   "population": 125955,
+   "areaKm2": 892.0
+  },
+  {
+   "code": "E07000206",
+   "name": "Waveney",
+   "nation": "England",
+   "population": 116514,
+   "areaKm2": 370.0
+  },
+  {
+   "code": "E07000207",
+   "name": "Elmbridge",
+   "nation": "England",
+   "population": 132764,
+   "areaKm2": 95.0
+  },
+  {
+   "code": "E07000208",
+   "name": "Epsom and Ewell",
+   "nation": "England",
+   "population": 79588,
+   "areaKm2": 34.0
+  },
+  {
+   "code": "E07000209",
+   "name": "Guildford",
+   "nation": "England",
+   "population": 148020,
+   "areaKm2": 271.0
+  },
+  {
+   "code": "E07000210",
+   "name": "Mole Valley",
+   "nation": "England",
+   "population": 86223,
+   "areaKm2": 258.0
+  },
+  {
+   "code": "E07000211",
+   "name": "Reigate and Banstead",
+   "nation": "England",
+   "population": 145648,
+   "areaKm2": 129.0
+  },
+  {
+   "code": "E07000212",
+   "name": "Runnymede",
+   "nation": "England",
+   "population": 86889,
+   "areaKm2": 78.0
+  },
+  {
+   "code": "E07000213",
+   "name": "Spelthorne",
+   "nation": "England",
+   "population": 98902,
+   "areaKm2": 45.0
+  },
+  {
+   "code": "E07000214",
+   "name": "Surrey Heath",
+   "nation": "England",
+   "population": 88387,
+   "areaKm2": 95.0
+  },
+  {
+   "code": "E07000215",
+   "name": "Tandridge",
+   "nation": "England",
+   "population": 86665,
+   "areaKm2": 248.0
+  },
+  {
+   "code": "E07000216",
+   "name": "Waverley",
+   "nation": "England",
+   "population": 123768,
+   "areaKm2": 345.0
+  },
+  {
+   "code": "E07000217",
+   "name": "Woking",
+   "nation": "England",
+   "population": 99695,
+   "areaKm2": 64.0
+  },
+  {
+   "code": "E07000218",
+   "name": "North Warwickshire",
+   "nation": "England",
+   "population": 63229,
+   "areaKm2": 284.0
+  },
+  {
+   "code": "E07000219",
+   "name": "Nuneaton and Bedworth",
+   "nation": "England",
+   "population": 127019,
+   "areaKm2": 79.0
+  },
+  {
+   "code": "E07000220",
+   "name": "Rugby",
+   "nation": "England",
+   "population": 103815,
+   "areaKm2": 351.0
+  },
+  {
+   "code": "E07000221",
+   "name": "Stratford-on-Avon",
+   "nation": "England",
+   "population": 122276,
+   "areaKm2": 978.0
+  },
+  {
+   "code": "E07000222",
+   "name": "Warwick",
+   "nation": "England",
+   "population": 140411,
+   "areaKm2": 283.0
+  },
+  {
+   "code": "E07000223",
+   "name": "Adur",
+   "nation": "England",
+   "population": 63506,
+   "areaKm2": 42.0
+  },
+  {
+   "code": "E07000224",
+   "name": "Arun",
+   "nation": "England",
+   "population": 156997,
+   "areaKm2": 221.0
+  },
+  {
+   "code": "E07000225",
+   "name": "Chichester",
+   "nation": "England",
+   "population": 118175,
+   "areaKm2": 786.0
+  },
+  {
+   "code": "E07000226",
+   "name": "Crawley",
+   "nation": "England",
+   "population": 111375,
+   "areaKm2": 45.0
+  },
+  {
+   "code": "E07000227",
+   "name": "Horsham",
+   "nation": "England",
+   "population": 138018,
+   "areaKm2": 530.0
+  },
+  {
+   "code": "E07000228",
+   "name": "Mid Sussex",
+   "nation": "England",
+   "population": 147089,
+   "areaKm2": 334.0
+  },
+  {
+   "code": "E07000229",
+   "name": "Worthing",
+   "nation": "England",
+   "population": 108605,
+   "areaKm2": 33.0
+  },
+  {
+   "code": "E07000234",
+   "name": "Bromsgrove",
+   "nation": "England",
+   "population": 96769,
+   "areaKm2": 217.0
+  },
+  {
+   "code": "E07000235",
+   "name": "Malvern Hills",
+   "nation": "England",
+   "population": 76130,
+   "areaKm2": 577.0
+  },
+  {
+   "code": "E07000236",
+   "name": "Redditch",
+   "nation": "England",
+   "population": 84971,
+   "areaKm2": 54.0
+  },
+  {
+   "code": "E07000237",
+   "name": "Worcester",
+   "nation": "England",
+   "population": 102338,
+   "areaKm2": 33.0
+  },
+  {
+   "code": "E07000238",
+   "name": "Wychavon",
+   "nation": "England",
+   "population": 122943,
+   "areaKm2": 664.0
+  },
+  {
+   "code": "E07000239",
+   "name": "Wyre Forest",
+   "nation": "England",
+   "population": 99902,
+   "areaKm2": 195.0
+  },
+  {
+   "code": "E07000240",
+   "name": "St Albans",
+   "nation": "England",
+   "population": 146282,
+   "areaKm2": 161.0
+  },
+  {
+   "code": "E07000241",
+   "name": "Welwyn Hatfield",
+   "nation": "England",
+   "population": 121996,
+   "areaKm2": 130.0
+  },
+  {
+   "code": "E07000242",
+   "name": "East Hertfordshire",
+   "nation": "England",
+   "population": 146309,
+   "areaKm2": 476.0
+  },
+  {
+   "code": "E07000243",
+   "name": "Stevenage",
+   "nation": "England",
+   "population": 87081,
+   "areaKm2": 26.0
+  },
+  {
+   "code": "E08000001",
+   "name": "Bolton",
+   "nation": "England",
+   "population": 283115,
+   "areaKm2": 140.0
+  },
+  {
+   "code": "E08000002",
+   "name": "Bury",
+   "nation": "England",
+   "population": 188669,
+   "areaKm2": 99.0
+  },
+  {
+   "code": "E08000003",
+   "name": "Manchester",
+   "nation": "England",
+   "population": 541263,
+   "areaKm2": 116.0
+  },
+  {
+   "code": "E08000004",
+   "name": "Oldham",
+   "nation": "England",
+   "population": 232724,
+   "areaKm2": 142.0
+  },
+  {
+   "code": "E08000005",
+   "name": "Rochdale",
+   "nation": "England",
+   "population": 216165,
+   "areaKm2": 158.0
+  },
+  {
+   "code": "E08000006",
+   "name": "Salford",
+   "nation": "England",
+   "population": 248726,
+   "areaKm2": 97.0
+  },
+  {
+   "code": "E08000007",
+   "name": "Stockport",
+   "nation": "England",
+   "population": 290557,
+   "areaKm2": 126.0
+  },
+  {
+   "code": "E08000008",
+   "name": "Tameside",
+   "nation": "England",
+   "population": 223189,
+   "areaKm2": 103.0
+  },
+  {
+   "code": "E08000009",
+   "name": "Trafford",
+   "nation": "England",
+   "population": 234673,
+   "areaKm2": 106.0
+  },
+  {
+   "code": "E08000010",
+   "name": "Wigan",
+   "nation": "England",
+   "population": 323060,
+   "areaKm2": 188.0
+  },
+  {
+   "code": "E08000011",
+   "name": "Knowsley",
+   "nation": "England",
+   "population": 147915,
+   "areaKm2": 87.0
+  },
+  {
+   "code": "E08000012",
+   "name": "Liverpool",
+   "nation": "England",
+   "population": 484578,
+   "areaKm2": 112.0
+  },
+  {
+   "code": "E08000013",
+   "name": "St. Helens",
+   "nation": "England",
+   "population": 178455,
+   "areaKm2": 136.0
+  },
+  {
+   "code": "E08000014",
+   "name": "Sefton",
+   "nation": "England",
+   "population": 274261,
+   "areaKm2": 155.0
+  },
+  {
+   "code": "E08000015",
+   "name": "Wirral",
+   "nation": "England",
+   "population": 321238,
+   "areaKm2": 157.0
+  },
+  {
+   "code": "E08000016",
+   "name": "Barnsley",
+   "nation": "England",
+   "population": 241218,
+   "areaKm2": 329.0
+  },
+  {
+   "code": "E08000017",
+   "name": "Doncaster",
+   "nation": "England",
+   "population": 306397,
+   "areaKm2": 568.0
+  },
+  {
+   "code": "E08000018",
+   "name": "Rotherham",
+   "nation": "England",
+   "population": 261930,
+   "areaKm2": 287.0
+  },
+  {
+   "code": "E08000019",
+   "name": "Sheffield",
+   "nation": "England",
+   "population": 575424,
+   "areaKm2": 368.0
+  },
+  {
+   "code": "E08000021",
+   "name": "Newcastle upon Tyne",
+   "nation": "England",
+   "population": 296478,
+   "areaKm2": 113.0
+  },
+  {
+   "code": "E08000022",
+   "name": "North Tyneside",
+   "nation": "England",
+   "population": 203307,
+   "areaKm2": 82.0
+  },
+  {
+   "code": "E08000023",
+   "name": "South Tyneside",
+   "nation": "England",
+   "population": 149418,
+   "areaKm2": 64.0
+  },
+  {
+   "code": "E08000024",
+   "name": "Sunderland",
+   "nation": "England",
+   "population": 277962,
+   "areaKm2": 137.0
+  },
+  {
+   "code": "E08000025",
+   "name": "Birmingham",
+   "nation": "England",
+   "population": 1124569,
+   "areaKm2": 268.0
+  },
+  {
+   "code": "E08000026",
+   "name": "Coventry",
+   "nation": "England",
+   "population": 352911,
+   "areaKm2": 99.0
+  },
+  {
+   "code": "E08000027",
+   "name": "Dudley",
+   "nation": "England",
+   "population": 317634,
+   "areaKm2": 98.0
+  },
+  {
+   "code": "E08000028",
+   "name": "Sandwell",
+   "nation": "England",
+   "population": 322712,
+   "areaKm2": 86.0
+  },
+  {
+   "code": "E08000029",
+   "name": "Solihull",
+   "nation": "England",
+   "population": 211763,
+   "areaKm2": 178.0
+  },
+  {
+   "code": "E08000030",
+   "name": "Walsall",
+   "nation": "England",
+   "population": 278715,
+   "areaKm2": 104.0
+  },
+  {
+   "code": "E08000031",
+   "name": "Wolverhampton",
+   "nation": "England",
+   "population": 256621,
+   "areaKm2": 69.0
+  },
+  {
+   "code": "E08000032",
+   "name": "Bradford",
+   "nation": "England",
+   "population": 534279,
+   "areaKm2": 366.0
+  },
+  {
+   "code": "E08000033",
+   "name": "Calderdale",
+   "nation": "England",
+   "population": 209770,
+   "areaKm2": 364.0
+  },
+  {
+   "code": "E08000034",
+   "name": "Kirklees",
+   "nation": "England",
+   "population": 437047,
+   "areaKm2": 409.0
+  },
+  {
+   "code": "E08000035",
+   "name": "Leeds",
+   "nation": "England",
+   "population": 781743,
+   "areaKm2": 552.0
+  },
+  {
+   "code": "E08000036",
+   "name": "Wakefield",
+   "nation": "England",
+   "population": 336834,
+   "areaKm2": 339.0
+  },
+  {
+   "code": "E08000037",
+   "name": "Gateshead",
+   "nation": "England",
+   "population": 201592,
+   "areaKm2": 142.0
+  },
+  {
+   "code": "E09000001",
+   "name": "City of London",
+   "nation": "England",
+   "population": 9401,
+   "areaKm2": 3.0
+  },
+  {
+   "code": "E09000002",
+   "name": "Barking and Dagenham",
+   "nation": "England",
+   "population": 206460,
+   "areaKm2": 36.0
+  },
+  {
+   "code": "E09000003",
+   "name": "Barnet",
+   "nation": "England",
+   "population": 386083,
+   "areaKm2": 87.0
+  },
+  {
+   "code": "E09000004",
+   "name": "Bexley",
+   "nation": "England",
+   "population": 244760,
+   "areaKm2": 61.0
+  },
+  {
+   "code": "E09000005",
+   "name": "Brent",
+   "nation": "England",
+   "population": 328254,
+   "areaKm2": 43.0
+  },
+  {
+   "code": "E09000006",
+   "name": "Bromley",
+   "nation": "England",
+   "population": 326889,
+   "areaKm2": 150.0
+  },
+  {
+   "code": "E09000007",
+   "name": "Camden",
+   "nation": "England",
+   "population": 246181,
+   "areaKm2": 22.0
+  },
+  {
+   "code": "E09000008",
+   "name": "Croydon",
+   "nation": "England",
+   "population": 382304,
+   "areaKm2": 86.0
+  },
+  {
+   "code": "E09000009",
+   "name": "Ealing",
+   "nation": "England",
+   "population": 343196,
+   "areaKm2": 56.0
+  },
+  {
+   "code": "E09000010",
+   "name": "Enfield",
+   "nation": "England",
+   "population": 331395,
+   "areaKm2": 81.0
+  },
+  {
+   "code": "E09000011",
+   "name": "Greenwich",
+   "nation": "England",
+   "population": 279766,
+   "areaKm2": 47.0
+  },
+  {
+   "code": "E09000012",
+   "name": "Hackney",
+   "nation": "England",
+   "population": 273526,
+   "areaKm2": 19.0
+  },
+  {
+   "code": "E09000013",
+   "name": "Hammersmith and Fulham",
+   "nation": "England",
+   "population": 179654,
+   "areaKm2": 16.0
+  },
+  {
+   "code": "E09000014",
+   "name": "Haringey",
+   "nation": "England",
+   "population": 278451,
+   "areaKm2": 30.0
+  },
+  {
+   "code": "E09000015",
+   "name": "Harrow",
+   "nation": "England",
+   "population": 248752,
+   "areaKm2": 50.0
+  },
+  {
+   "code": "E09000016",
+   "name": "Havering",
+   "nation": "England",
+   "population": 252783,
+   "areaKm2": 112.0
+  },
+  {
+   "code": "E09000017",
+   "name": "Hillingdon",
+   "nation": "England",
+   "population": 302471,
+   "areaKm2": 116.0
+  },
+  {
+   "code": "E09000018",
+   "name": "Hounslow",
+   "nation": "England",
+   "population": 271139,
+   "areaKm2": 56.0
+  },
+  {
+   "code": "E09000019",
+   "name": "Islington",
+   "nation": "England",
+   "population": 232865,
+   "areaKm2": 15.0
+  },
+  {
+   "code": "E09000020",
+   "name": "Kensington and Chelsea",
+   "nation": "England",
+   "population": 156726,
+   "areaKm2": 12.0
+  },
+  {
+   "code": "E09000021",
+   "name": "Kingston upon Thames",
+   "nation": "England",
+   "population": 176107,
+   "areaKm2": 37.0
+  },
+  {
+   "code": "E09000022",
+   "name": "Lambeth",
+   "nation": "England",
+   "population": 327910,
+   "areaKm2": 27.0
+  },
+  {
+   "code": "E09000023",
+   "name": "Lewisham",
+   "nation": "England",
+   "population": 301867,
+   "areaKm2": 35.0
+  },
+  {
+   "code": "E09000024",
+   "name": "Merton",
+   "nation": "England",
+   "population": 205029,
+   "areaKm2": 38.0
+  },
+  {
+   "code": "E09000025",
+   "name": "Newham",
+   "nation": "England",
+   "population": 340978,
+   "areaKm2": 36.0
+  },
+  {
+   "code": "E09000026",
+   "name": "Redbridge",
+   "nation": "England",
+   "population": 299249,
+   "areaKm2": 56.0
+  },
+  {
+   "code": "E09000027",
+   "name": "Richmond upon Thames",
+   "nation": "England",
+   "population": 195846,
+   "areaKm2": 57.0
+  },
+  {
+   "code": "E09000028",
+   "name": "Southwark",
+   "nation": "England",
+   "population": 313223,
+   "areaKm2": 29.0
+  },
+  {
+   "code": "E09000029",
+   "name": "Sutton",
+   "nation": "England",
+   "population": 202220,
+   "areaKm2": 44.0
+  },
+  {
+   "code": "E09000030",
+   "name": "Tower Hamlets",
+   "nation": "England",
+   "population": 304854,
+   "areaKm2": 20.0
+  },
+  {
+   "code": "E09000031",
+   "name": "Waltham Forest",
+   "nation": "England",
+   "population": 275843,
+   "areaKm2": 39.0
+  },
+  {
+   "code": "E09000032",
+   "name": "Wandsworth",
+   "nation": "England",
+   "population": 316096,
+   "areaKm2": 34.0
+  },
+  {
+   "code": "E09000033",
+   "name": "Westminster",
+   "nation": "England",
+   "population": 247614,
+   "areaKm2": 21.0
+  },
+  {
+   "code": "N09000001",
+   "name": "Antrim and Newtownabbey",
+   "nation": "Northern Ireland",
+   "population": 141032,
+   "areaKm2": 572.0
+  },
+  {
+   "code": "N09000002",
+   "name": "Armagh City, Banbridge and Craigavon",
+   "nation": "Northern Ireland",
+   "population": 210260,
+   "areaKm2": 1337.0
+  },
+  {
+   "code": "N09000003",
+   "name": "Belfast",
+   "nation": "Northern Ireland",
+   "population": 339579,
+   "areaKm2": 132.0
+  },
+  {
+   "code": "N09000004",
+   "name": "Causeway Coast and Glens",
+   "nation": "Northern Ireland",
+   "population": 143525,
+   "areaKm2": 1980.0
+  },
+  {
+   "code": "N09000005",
+   "name": "Derry City and Strabane",
+   "nation": "Northern Ireland",
+   "population": 150142,
+   "areaKm2": 1238.0
+  },
+  {
+   "code": "N09000006",
+   "name": "Fermanagh and Omagh",
+   "nation": "Northern Ireland",
+   "population": 115799,
+   "areaKm2": 2857.0
+  },
+  {
+   "code": "N09000007",
+   "name": "Lisburn and Castlereagh",
+   "nation": "Northern Ireland",
+   "population": 141181,
+   "areaKm2": 505.0
+  },
+  {
+   "code": "N09000008",
+   "name": "Mid and East Antrim",
+   "nation": "Northern Ireland",
+   "population": 137821,
+   "areaKm2": 1046.0
+  },
+  {
+   "code": "N09000009",
+   "name": "Mid Ulster",
+   "nation": "Northern Ireland",
+   "population": 145389,
+   "areaKm2": 1827.0
+  },
+  {
+   "code": "N09000010",
+   "name": "Newry, Mourne and Down",
+   "nation": "Northern Ireland",
+   "population": 177816,
+   "areaKm2": 1633.0
+  },
+  {
+   "code": "N09000011",
+   "name": "Ards and North Down",
+   "nation": "Northern Ireland",
+   "population": 159593,
+   "areaKm2": 461.0
+  },
+  {
+   "code": "S12000005",
+   "name": "Clackmannanshire",
+   "nation": "Scotland",
+   "population": 51350,
+   "areaKm2": 159.0
+  },
+  {
+   "code": "S12000006",
+   "name": "Dumfries and Galloway",
+   "nation": "Scotland",
+   "population": 149520,
+   "areaKm2": 6427.0
+  },
+  {
+   "code": "S12000008",
+   "name": "East Ayrshire",
+   "nation": "Scotland",
+   "population": 122200,
+   "areaKm2": 1262.0
+  },
+  {
+   "code": "S12000010",
+   "name": "East Lothian",
+   "nation": "Scotland",
+   "population": 104090,
+   "areaKm2": 679.0
+  },
+  {
+   "code": "S12000011",
+   "name": "East Renfrewshire",
+   "nation": "Scotland",
+   "population": 93810,
+   "areaKm2": 174.0
+  },
+  {
+   "code": "S12000013",
+   "name": "Na h-Eileanan Siar",
+   "nation": "Scotland",
+   "population": 26900,
+   "areaKm2": 3059.0
+  },
+  {
+   "code": "S12000014",
+   "name": "Falkirk",
+   "nation": "Scotland",
+   "population": 159380,
+   "areaKm2": 297.0
+  },
+  {
+   "code": "S12000015",
+   "name": "Fife",
+   "nation": "Scotland",
+   "population": 370330,
+   "areaKm2": 1325.0
+  },
+  {
+   "code": "S12000017",
+   "name": "Highland",
+   "nation": "Scotland",
+   "population": 234770,
+   "areaKm2": 25657.0
+  },
+  {
+   "code": "S12000018",
+   "name": "Inverclyde",
+   "nation": "Scotland",
+   "population": 79160,
+   "areaKm2": 160.0
+  },
+  {
+   "code": "S12000019",
+   "name": "Midlothian",
+   "nation": "Scotland",
+   "population": 88610,
+   "areaKm2": 354.0
+  },
+  {
+   "code": "S12000020",
+   "name": "Moray",
+   "nation": "Scotland",
+   "population": 96070,
+   "areaKm2": 2238.0
+  },
+  {
+   "code": "S12000021",
+   "name": "North Ayrshire",
+   "nation": "Scotland",
+   "population": 135890,
+   "areaKm2": 885.0
+  },
+  {
+   "code": "S12000023",
+   "name": "Orkney Islands",
+   "nation": "Scotland",
+   "population": 21850,
+   "areaKm2": 989.0
+  },
+  {
+   "code": "S12000024",
+   "name": "Perth and Kinross",
+   "nation": "Scotland",
+   "population": 150680,
+   "areaKm2": 5286.0
+  },
+  {
+   "code": "S12000026",
+   "name": "Scottish Borders",
+   "nation": "Scotland",
+   "population": 114530,
+   "areaKm2": 4732.0
+  },
+  {
+   "code": "S12000027",
+   "name": "Shetland Islands",
+   "nation": "Scotland",
+   "population": 23200,
+   "areaKm2": 1468.0
+  },
+  {
+   "code": "S12000028",
+   "name": "South Ayrshire",
+   "nation": "Scotland",
+   "population": 112470,
+   "areaKm2": 1222.0
+  },
+  {
+   "code": "S12000029",
+   "name": "South Lanarkshire",
+   "nation": "Scotland",
+   "population": 317100,
+   "areaKm2": 1772.0
+  },
+  {
+   "code": "S12000030",
+   "name": "Stirling",
+   "nation": "Scotland",
+   "population": 93750,
+   "areaKm2": 2187.0
+  },
+  {
+   "code": "S12000033",
+   "name": "Aberdeen City",
+   "nation": "Scotland",
+   "population": 229840,
+   "areaKm2": 186.0
+  },
+  {
+   "code": "S12000034",
+   "name": "Aberdeenshire",
+   "nation": "Scotland",
+   "population": 262190,
+   "areaKm2": 6313.0
+  },
+  {
+   "code": "S12000035",
+   "name": "Argyll and Bute",
+   "nation": "Scotland",
+   "population": 87130,
+   "areaKm2": 6909.0
+  },
+  {
+   "code": "S12000036",
+   "name": "City of Edinburgh",
+   "nation": "Scotland",
+   "population": 507170,
+   "areaKm2": 263.0
+  },
+  {
+   "code": "S12000038",
+   "name": "Renfrewshire",
+   "nation": "Scotland",
+   "population": 175930,
+   "areaKm2": 261.0
+  },
+  {
+   "code": "S12000039",
+   "name": "West Dunbartonshire",
+   "nation": "Scotland",
+   "population": 89860,
+   "areaKm2": 159.0
+  },
+  {
+   "code": "S12000040",
+   "name": "West Lothian",
+   "nation": "Scotland",
+   "population": 180130,
+   "areaKm2": 428.0
+  },
+  {
+   "code": "S12000041",
+   "name": "Angus",
+   "nation": "Scotland",
+   "population": 116520,
+   "areaKm2": 2182.0
+  },
+  {
+   "code": "S12000042",
+   "name": "Dundee City",
+   "nation": "Scotland",
+   "population": 148270,
+   "areaKm2": 60.0
+  },
+  {
+   "code": "S12000044",
+   "name": "North Lanarkshire",
+   "nation": "Scotland",
+   "population": 339390,
+   "areaKm2": 470.0
+  },
+  {
+   "code": "S12000045",
+   "name": "East Dunbartonshire",
+   "nation": "Scotland",
+   "population": 107540,
+   "areaKm2": 174.0
+  },
+  {
+   "code": "S12000046",
+   "name": "Glasgow City",
+   "nation": "Scotland",
+   "population": 615070,
+   "areaKm2": 175.0
+  },
+  {
+   "code": "W06000001",
+   "name": "Isle of Anglesey",
+   "nation": "Wales",
+   "population": 69723,
+   "areaKm2": 711.0
+  },
+  {
+   "code": "W06000002",
+   "name": "Gwynedd",
+   "nation": "Wales",
+   "population": 123627,
+   "areaKm2": 2535.0
+  },
+  {
+   "code": "W06000003",
+   "name": "Conwy",
+   "nation": "Wales",
+   "population": 116538,
+   "areaKm2": 1126.0
+  },
+  {
+   "code": "W06000004",
+   "name": "Denbighshire",
+   "nation": "Wales",
+   "population": 94805,
+   "areaKm2": 837.0
+  },
+  {
+   "code": "W06000005",
+   "name": "Flintshire",
+   "nation": "Wales",
+   "population": 154419,
+   "areaKm2": 437.0
+  },
+  {
+   "code": "W06000006",
+   "name": "Wrexham",
+   "nation": "Wales",
+   "population": 136710,
+   "areaKm2": 504.0
+  },
+  {
+   "code": "W06000008",
+   "name": "Ceredigion",
+   "nation": "Wales",
+   "population": 74146,
+   "areaKm2": 1786.0
+  },
+  {
+   "code": "W06000009",
+   "name": "Pembrokeshire",
+   "nation": "Wales",
+   "population": 123954,
+   "areaKm2": 1619.0
+  },
+  {
+   "code": "W06000010",
+   "name": "Carmarthenshire",
+   "nation": "Wales",
+   "population": 185610,
+   "areaKm2": 2370.0
+  },
+  {
+   "code": "W06000011",
+   "name": "Swansea",
+   "nation": "Wales",
+   "population": 244513,
+   "areaKm2": 380.0
+  },
+  {
+   "code": "W06000012",
+   "name": "Neath Port Talbot",
+   "nation": "Wales",
+   "population": 141588,
+   "areaKm2": 441.0
+  },
+  {
+   "code": "W06000013",
+   "name": "Bridgend",
+   "nation": "Wales",
+   "population": 143177,
+   "areaKm2": 251.0
+  },
+  {
+   "code": "W06000014",
+   "name": "Vale of Glamorgan",
+   "nation": "Wales",
+   "population": 128463,
+   "areaKm2": 331.0
+  },
+  {
+   "code": "W06000015",
+   "name": "Cardiff",
+   "nation": "Wales",
+   "population": 361468,
+   "areaKm2": 141.0
+  },
+  {
+   "code": "W06000016",
+   "name": "Rhondda Cynon Taf",
+   "nation": "Wales",
+   "population": 238306,
+   "areaKm2": 424.0
+  },
+  {
+   "code": "W06000018",
+   "name": "Caerphilly",
+   "nation": "Wales",
+   "population": 180462,
+   "areaKm2": 277.0
+  },
+  {
+   "code": "W06000019",
+   "name": "Blaenau Gwent",
+   "nation": "Wales",
+   "population": 69628,
+   "areaKm2": 109.0
+  },
+  {
+   "code": "W06000020",
+   "name": "Torfaen",
+   "nation": "Wales",
+   "population": 92052,
+   "areaKm2": 126.0
+  },
+  {
+   "code": "W06000021",
+   "name": "Monmouthshire",
+   "nation": "Wales",
+   "population": 92843,
+   "areaKm2": 849.0
+  },
+  {
+   "code": "W06000022",
+   "name": "Newport",
+   "nation": "Wales",
+   "population": 149148,
+   "areaKm2": 191.0
+  },
+  {
+   "code": "W06000023",
+   "name": "Powys",
+   "nation": "Wales",
+   "population": 132160,
+   "areaKm2": 5181.0
+  },
+  {
+   "code": "W06000024",
+   "name": "Merthyr Tydfil",
+   "nation": "Wales",
+   "population": 59810,
+   "areaKm2": 111.0
+  }
+ ]
+}

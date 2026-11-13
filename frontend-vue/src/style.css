@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+
+/* Theming: every colour token resolves through a CSS variable, so Dark (default), Light and System
+   all update every component at once. Dark values are the Detection-monitor palette. */
+@theme inline {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-ink-950: var(--c-ink-950); --color-ink-900: var(--c-ink-900); --color-ink-850: var(--c-ink-850);
+  --color-ink-800: var(--c-ink-800); --color-ink-700: var(--c-ink-700); --color-ink-600: var(--c-ink-600);
+  --color-line: var(--c-line);
+  --color-accent: var(--c-accent); --color-hl: var(--c-hl); --color-ice: var(--c-ice);
+  --color-fg: var(--c-fg); --color-fg2: var(--c-fg2); --color-fg3: var(--c-fg3);
+  --color-sev-crit: var(--c-sev-crit); --color-sev-high: var(--c-sev-high); --color-sev-med: var(--c-sev-med); --color-sev-low: var(--c-sev-low); --color-ok: var(--c-ok);
+  --color-cyan-glow: var(--c-hl);
+  /* Legacy utilities (violet/cyan/emerald/amber/rose/slate/white) are remapped onto the palette. */
+  --color-white: var(--c-white);
+  --color-violet-200: var(--c-v200); --color-violet-300: var(--c-v300); --color-violet-400: var(--c-v400); --color-violet-500: var(--c-v500); --color-violet-600: var(--c-v600);
+  --color-cyan-200: var(--c-v200); --color-cyan-300: var(--c-v300); --color-cyan-400: var(--c-c400); --color-cyan-500: var(--c-v400);
+  --color-emerald-300: var(--c-v300); --color-emerald-400: var(--c-c400);
+  --color-amber-200: var(--c-v200); --color-amber-300: var(--c-v300); --color-amber-400: var(--c-c400);
+  --color-rose-200: var(--c-r200); --color-rose-300: var(--c-r300); --color-rose-400: var(--c-r400); --color-rose-500: var(--c-r500);
+  --color-slate-200: var(--c-s200); --color-slate-300: var(--c-s300); --color-slate-400: var(--c-s400); --color-slate-500: var(--c-s500);
+  --color-risk-low: var(--c-sev-low); --color-risk-medium: var(--c-sev-med); --color-risk-high: var(--c-sev-high); --color-risk-critical: var(--c-sev-crit);
+}
+
+:root, :root[data-theme='dark'] {
+  color-scheme: dark;
+  --c-ink-950: #020D1B; --c-ink-900: #071426; --c-ink-850: #051225; --c-ink-800: #0B1E33; --c-ink-700: #10263D; --c-ink-600: #1B344D; --c-line: #1B344D;
+  --c-accent: #65B9EE; --c-hl: #8DD4FA; --c-ice: #BFE8FF;
+  --c-fg: #F2F7FC; --c-fg2: #8CA2BA; --c-fg3: #607891;
+  --c-sev-crit: #E85D68; --c-sev-high: #F1A052; --c-sev-med: #D9AA56; --c-sev-low: #64C9DE; --c-ok: #28B99D;
+  --c-white: #FFFFFF;
+  --c-v200: #D9F0FF; --c-v300: #C5E9FF; --c-v400: #69B8F0; --c-v500: #3F96DB; --c-v600: #2F7FC1; --c-c400: #8FD0FA;
+  --c-r200: #FBD0D9; --c-r300: #F4A3B4; --c-r400: #EE8196; --c-r500: #E0647E;
+  --c-s200: #D7E6F3; --c-s300: #BCD2E6; --c-s400: #AAC5DD; --c-s500: #86A4C0;
+  --card-top: #0D2238; --card-edge: rgb(141 212 250 / 0.05); --card-drop: rgb(0 0 0 / 0.8);
+  --scroll: rgb(255 255 255 / 0.12); --shimmer-a: rgb(255 255 255 / 0.04); --shimmer-b: rgb(255 255 255 / 0.10);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --c-ink-950: #E9F0F7; --c-ink-900: #F3F7FB; --c-ink-850: #F8FBFE; --c-ink-800: #FFFFFF; --c-ink-700: #EDF3F9; --c-ink-600: #D3E0EC; --c-line: #D3E0EC;
+  --c-accent: #1F6FB5; --c-hl: #2A86CF; --c-ice: #0F4C81;
+  --c-fg: #0B1E33; --c-fg2: #4A6580; --c-fg3: #5F7890;
+  --c-sev-crit: #C2334A; --c-sev-high: #B35F12; --c-sev-med: #8F6A10; --c-sev-low: #17788D; --c-ok: #0F8A74;
+  --c-white: #0B1E33;
+  --c-v200: #0F4C81; --c-v300: #175A94; --c-v400: #1F6FB5; --c-v500: #1F6FB5; --c-v600: #175A94; --c-c400: #2A86CF;
+  --c-r200: #8E2438; --c-r300: #B02A41; --c-r400: #C2334A; --c-r500: #C2334A;
+  --c-s200: #1E3A55; --c-s300: #34506B; --c-s400: #4A6580; --c-s500: #5F7890;
+  --card-top: #FFFFFF; --card-edge: rgb(255 255 255 / 0); --card-drop: rgb(11 30 51 / 0.12);
+  --scroll: rgb(11 30 51 / 0.2); --shimmer-a: rgb(11 30 51 / 0.05); --shimmer-b: rgb(11 30 51 / 0.11);
+}
+
+
+html, body, #app { height: 100%; }
+h1 { font-weight: 600; letter-spacing: -0.01em; }
+
+body {
+  margin: 0;
+  transition: background-color .2s, color .2s;
+  background: var(--color-ink-950);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+}
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* Card surface: flat navy with a thin illuminated top edge, no blur */
+@utility glass {
+  background: linear-gradient(180deg, var(--card-top), var(--color-ink-800));
+  border: 1px solid var(--color-line);
+  box-shadow: 0 1px 0 var(--card-edge) inset, 0 12px 28px -18px var(--card-drop);
+}
+
+@utility focus-ring {
+  &:focus-visible { outline: 2px solid var(--color-cyan-glow); outline-offset: 2px; }
+}
+
+.skeleton {
+  background: linear-gradient(100deg, var(--shimmer-a) 30%, var(--shimmer-b) 50%, var(--shimmer-a) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 8px;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+@keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 0.8 } 100% { transform: scale(2.2); opacity: 0 } }
+.pulse-ring::after {
+  content: ''; position: absolute; inset: 0; border-radius: 999px; background: currentColor;
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--scroll); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton, .pulse-ring::after { animation: none; }
+  * { scroll-behavior: auto !important; }
+}

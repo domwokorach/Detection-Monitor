@@ -1,0 +1,65 @@
+name: sentinel-monitor
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-frauddb}
+      POSTGRES_USER: ${POSTGRES_USER:-fraudapp}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-development-only}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  api:
+    build: ./backend
+    environment: &app_env
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-fraudapp}:${POSTGRES_PASSWORD:-local-development-only}@postgres:5432/${POSTGRES_DB:-frauddb}
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET: ${JWT_SECRET:-DEV_ONLY_replace_with_32_bytes_of_random_secret}
+      ALERT_THRESHOLD: ${ALERT_THRESHOLD:-40}
+      DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD:-ChangeMe123!}
+      DEMO_ANALYST_PASSWORD: ${DEMO_ANALYST_PASSWORD:-ChangeMe123!}
+      TRUELAYER_CLIENT_ID: ${TRUELAYER_CLIENT_ID:-}
+      TRUELAYER_CLIENT_SECRET: ${TRUELAYER_CLIENT_SECRET:-}
+      TRUELAYER_REDIRECT_URI: ${TRUELAYER_REDIRECT_URI:-https://console.truelayer.com/redirect-page}
+      TRUELAYER_API_URL: ${TRUELAYER_API_URL:-https://api.truelayer-sandbox.com}
+      TRUELAYER_AUTH_URL: ${TRUELAYER_AUTH_URL:-https://auth.truelayer-sandbox.com}
+      LOGO_DEV_SECRET_KEY: ${LOGO_DEV_SECRET_KEY:-}
+      SEED_DEMO: "1"
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    ports: ["8000:8000"]
+  worker:
+    build: ./backend
+    command: ["python", "-m", "app.worker"]
+    environment:
+      <<: *app_env
+      SEED_DEMO: "0"
+    depends_on:
+      api: { condition: service_healthy }
+  web:
+    build:
+      context: ./frontend
+      args:
+        VITE_LOGO_DEV_PUBLISHABLE_KEY: ${VITE_LOGO_DEV_PUBLISHABLE_KEY:-}
+    ports: ["8080:80"]
+    depends_on:
+      api: { condition: service_healthy }
+volumes:
+  pgdata:

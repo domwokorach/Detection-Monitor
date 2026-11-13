@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071A33">
+  <title>UK population by local authority, 2016</title>
+  <meta name="description" content="Bubble map of mid-2016 population estimates for every UK local authority. ONS data and ONSdigital boundaries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <a class="skip" href="#search">Skip to search</a>
+  <header class="top">
+    <div>
+      <p class="eyebrow">United Kingdom · mid-2016 estimates</p>
+      <h1>Where the UK lives</h1>
+      <p class="lede">Population of every local authority in England, Scotland, Wales and Northern Ireland. Bubble area is proportional to population.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card map-card" aria-label="Map">
+      <div id="map" class="map-host"></div>
+      <div class="zoom" role="group" aria-label="Map zoom">
+        <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+        <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+        <button id="zoom-reset" type="button" aria-label="Reset view">⤢</button>
+      </div>
+      <button id="panel-toggle" class="panel-toggle" type="button" aria-expanded="true" aria-controls="side"><span>Hide panel</span></button>
+      <p id="status" class="status" role="status">Loading map…</p>
+    </section>
+
+    <aside class="side" id="side" aria-label="Controls and details">
+      <section class="card stats" aria-live="polite">
+        <p class="stats__label" id="stats-label">United Kingdom</p>
+        <p class="stats__value" id="stats-value">—</p>
+        <p class="stats__sub" id="stats-sub"></p>
+      </section>
+
+      <section class="card">
+        <h2>Nation</h2>
+        <div id="nations" class="chips" role="group" aria-label="Filter by nation"></div>
+      </section>
+
+      <section class="card">
+        <h2><label for="search">Find a local authority</label></h2>
+        <div class="search">
+          <input id="search" type="search" placeholder="e.g. Glasgow, Cardiff, Belfast" autocomplete="off" role="combobox"
+                 aria-expanded="false" aria-controls="results" aria-autocomplete="list">
+          <ul id="results" role="listbox" aria-label="Matching local authorities" hidden></ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Bubble size</h2>
+        <svg id="legend" class="legend" role="img" aria-label="Legend: bubble sizes for 100 thousand, 500 thousand and 1 million people"></svg>
+        <p class="note"><span class="swatch swatch--hatch" aria-hidden="true"></span> Hatched outline = no matched population record</p>
+      </section>
+
+      <section class="card">
+        <h2>Largest <span id="top-scope">in the UK</span></h2>
+        <ol id="top" class="top"></ol>
+      </section>
+
+      <section class="card data" id="quality">
+        <h2>Data &amp; coverage</h2>
+        <p id="quality-text" class="note"></p>
+        <ul class="sources">
+          <li><strong>Population:</strong> <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland" rel="noopener">ONS mid-2016 population estimates</a> (sheet MYE5), Open Government Licence v3.0.</li>
+          <li><strong>Boundaries:</strong> <a href="https://github.com/ONSdigital/uk-topojson" rel="noopener">ONSdigital/uk-topojson</a>, lower-tier authorities valid in 2016, joined on GSS codes.</li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

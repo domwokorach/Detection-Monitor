@@ -1,0 +1,190 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --color-app: var(--app);
+    --color-ice: var(--ice);
+    --color-hl: var(--hl);
+    --color-ok: var(--ok);
+    --color-sev-crit: var(--sev-crit);
+    --color-sev-high: var(--sev-high);
+    --color-sev-med: var(--sev-med);
+    --color-sev-low: var(--sev-low);
+    --color-subtle: var(--subtle);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Detection-monitor palette. Dark is the default theme (the <html> element carries .dark). */
+.dark {
+    --app: #020D1B;
+    --background: #071426;
+    --foreground: #F2F7FC;
+    --card: #0B1E33;
+    --card-foreground: #F2F7FC;
+    --popover: #10263D;
+    --popover-foreground: #F2F7FC;
+    --primary: #65B9EE;
+    --primary-foreground: #020D1B;
+    --secondary: #10263D;
+    --secondary-foreground: #F2F7FC;
+    --muted: #10263D;
+    --muted-foreground: #8CA2BA;
+    --subtle: #607891;
+    --accent: #10263D;
+    --accent-foreground: #F2F7FC;
+    --destructive: #E85D68;
+    --border: #1B344D;
+    --input: #1B344D;
+    --ring: #65B9EE;
+    --hl: #8DD4FA;
+    --ice: #BFE8FF;
+    --ok: #28B99D;
+    --sev-crit: #E85D68; --sev-high: #F1A052; --sev-med: #D9AA56; --sev-low: #64C9DE;
+    --chart-1: #65B9EE; --chart-2: #8DD4FA; --chart-3: #BFE8FF; --chart-4: #4F9BD9; --chart-5: #1E5A91;
+    --sidebar: #051225;
+    --sidebar-foreground: #F2F7FC;
+    --sidebar-primary: #65B9EE;
+    --sidebar-primary-foreground: #020D1B;
+    --sidebar-accent: #10263D;
+    --sidebar-accent-foreground: #F2F7FC;
+    --sidebar-border: #1B344D;
+    --sidebar-ring: #65B9EE;
+    --radius: 0.625rem;
+}
+
+:root:not(.dark) {
+    --app: #E9F0F7;
+    --background: #F3F7FB;
+    --foreground: #0B1E33;
+    --card: #FFFFFF;
+    --card-foreground: #0B1E33;
+    --popover: #FFFFFF;
+    --popover-foreground: #0B1E33;
+    --primary: #1F6FB5;
+    --primary-foreground: #FFFFFF;
+    --secondary: #EDF3F9;
+    --secondary-foreground: #0B1E33;
+    --muted: #EDF3F9;
+    --muted-foreground: #4A6580;
+    --subtle: #5F7890;
+    --accent: #E3EDF6;
+    --accent-foreground: #0B1E33;
+    --destructive: #C2334A;
+    --border: #D3E0EC;
+    --input: #D3E0EC;
+    --ring: #1F6FB5;
+    --hl: #2A86CF;
+    --ice: #0F4C81;
+    --ok: #0F8A74;
+    --sev-crit: #C2334A; --sev-high: #B35F12; --sev-med: #8F6A10; --sev-low: #17788D;
+    --chart-1: #1F6FB5; --chart-2: #2A86CF; --chart-3: #0F4C81; --chart-4: #4F9BD9; --chart-5: #8DB4D6;
+    --sidebar: #F8FBFE;
+    --sidebar-foreground: #0B1E33;
+    --sidebar-primary: #1F6FB5;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #E3EDF6;
+    --sidebar-accent-foreground: #0B1E33;
+    --sidebar-border: #D3E0EC;
+    --sidebar-ring: #1F6FB5;
+    --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-app text-foreground antialiased;
+    font-size: 13px;
+    font-feature-settings: 'cv11', 'ss01';
+    }
+  html {
+    @apply font-sans;
+    }
+}
+/* Technical data: transaction IDs, timestamps and hashes use Geist Mono with tabular figures. */
+.tech { font-family: var(--font-mono); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* Card surface with a hairline highlight; hover brightens the border to the accent. */
+.dash-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; transition: border-color .25s ease, box-shadow .25s ease; }
+.dash-card:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--border)); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+/* D3 risk map layers (the map panel stays deep navy in both themes) */
+.uk-nation { fill: #0B1D31; stroke: #1F4466; stroke-linejoin: round; transition: opacity .3s; }
+.uk-area { stroke: #16324D; stroke-opacity: .75; fill: none; pointer-events: none; transition: opacity .3s; }
+.uk-area.has-risk { pointer-events: all; cursor: pointer; }
+.uk-area.has-risk:hover { stroke: #8DD4FA; stroke-opacity: 1; }
+.uk-nation.is-dim, .uk-area.is-dim { opacity: .25; }
+.uk-marker { cursor: pointer; mix-blend-mode: screen; pointer-events: none; transition: fill-opacity .2s; }
+.uk-marker[fill]:not([fill='none']) { pointer-events: all; }
+.uk-marker:hover { fill-opacity: .7; }
+.uk-area.is-selected { stroke: #F2F7FC; stroke-opacity: 1; }
+.uk-marker.is-selected { stroke: #fff; fill-opacity: .7; }
+
+/* Alerts page: sharp 5px geometry everywhere, including portalled sheets, dialogs, tooltips and popovers. */
+html.alerts-sharp.dark { --app: #030B14; }
+html.alerts-sharp [class*="rounded"], html.alerts-sharp .dash-card, html.alerts-sharp [data-slot="skeleton"], html.alerts-sharp [data-slot="sheet-content"],
+html.alerts-sharp [data-slot="dialog-content"], html.alerts-sharp [data-slot="tooltip-content"], html.alerts-sharp [data-slot="popover-content"],
+html.alerts-sharp [data-slot="badge"], html.alerts-sharp [data-slot="button"], html.alerts-sharp [data-slot="input-group"], html.alerts-sharp select { border-radius: 5px !important; }
+html.alerts-sharp .dash-card { transition-duration: .2s; }
+
+/* Risk map: dark attribution that stays visible (licence requirement) */
+.maplibregl-ctrl-attrib { background: rgb(11 30 51 / 0.9) !important; color: #8ca2ba !important; border-radius: 5px 0 0 0; font-size: 10px; }
+.maplibregl-ctrl-attrib a { color: #bfe8ff !important; }
+
+/* Watchlist hits chart: strict 5px geometry (cards, tooltip, buttons, filters) and the #030B14 plot well. */
+.wh-scope .dash-card, .wh-scope [data-slot="skeleton"], .wh-scope [data-slot="button"], .wh-scope [data-slot="toggle-group-item"], .wh-scope [class*="rounded"] { border-radius: 5px !important; }
+.wh-scope .recharts-tooltip-wrapper > div { border-radius: 5px !important; }
+.dark .wh-well { background: #030B14; border-color: var(--border); }
+.wh-scope .recharts-cartesian-axis-tick-value { fill: var(--muted-foreground); font-family: var(--font-mono); }
+.wh-scope .rounded-full { border-radius: 9999px !important; }

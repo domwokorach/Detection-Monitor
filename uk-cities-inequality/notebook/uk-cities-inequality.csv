@@ -1,0 +1,19 @@
+city,nation,population_2001,population_2015,p10_2001,p90_2001,p10_2015,p90_2015,highlight
+London,England,7376671,8659545,5.62,26.05,7.35,32.5,1
+Birmingham,England,990384,1114932,4.81,16.68,6.67,22.65,1
+Manchester,England,428221,523321,,,6.58,22.52,0
+Liverpool,England,443784,469953,4.57,15.62,6.69,23.18,0
+Leeds,England,716380,777987,4.81,17.19,6.88,24.79,0
+Sheffield,England,514201,555074,4.65,16.91,6.77,22.48,0
+Bristol,England,389735,451790,4.75,17.41,7.0,24.2,0
+Newcastle upon Tyne,England,267001,287955,4.62,17.15,6.54,24.07,0
+Nottingham,England,271769,313265,,,,,0
+Leicester,England,285295,349853,,,6.5,19.97,0
+Coventry,England,301295,331112,,,6.78,24.43,0
+Cardiff,Wales,312021,351600,4.8,19.17,6.74,27.23,1
+Swansea,Wales,224755,239354,,,6.59,23.85,0
+Glasgow,Scotland,576450,595200,4.55,15.06,6.75,22.93,1
+Edinburgh,Scotland,447500,490280,4.99,20.59,7.15,27.38,0
+Aberdeen,Scotland,210680,226680,,,,,0
+Dundee,Scotland,144370,147320,4.69,14.63,,,0
+Belfast,Northern Ireland,328471,340194,,,,,0
